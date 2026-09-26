@@ -1,0 +1,377 @@
+[
+  {
+    "evidence": "sun.nio.fs.WindowsNativeDispatcher.FindFirstFile0",
+    "family": "FILESYSTEM_IO",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "com.intellij.openapi.vfs.newvfs.persistent.FSRecordsImpl.readAttribute",
+    "family": "INDEX_STORAGE_WORK",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "java.lang.ClassLoader.defineClass",
+    "family": "CLASS_LOADING",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "sun.nio.fs.WindowsNativeDispatcher.CreateFile0",
+    "family": "FILESYSTEM_IO",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "sun.nio.fs.WindowsNativeDispatcher.FindClose",
+    "family": "FILESYSTEM_IO",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "com.intellij.platform.syntax.util.runtime.Modifiers.access$get_NONE_$cp",
+    "family": "PARSING_LEXING",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "com.intellij.textmate.joni.JoniRegexFacade.match-ZRjI0jQ",
+    "family": "REGEX",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "org.jetbrains.plugins.textmate.regex.CaffeineCachingRegexProvider.withRegex",
+    "family": "REGEX",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "com.intellij.workspaceModel.core.fileIndex.impl.WorkspaceFileIndexDataImpl.getFileInfo",
+    "family": "INDEX_STORAGE_WORK",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "com.intellij.ui.svg.SvgKt.loadSvgAndCacheIfApplicable-F6nGey4",
+    "family": "IMAGE_LOADING_PROCESSING",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "com.intellij.util.lang.UrlClassLoader.findClass",
+    "family": "CLASS_LOADING",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "com.intellij.lexer.MergingLexerAdapter$MyMergeFunction.merge",
+    "family": "PARSING_LEXING",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "com.intellij.lexer.FlexAdapter.locateToken",
+    "family": "PARSING_LEXING",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "com.intellij.openapi.vfs.newvfs.persistent.DefaultInMemoryInvertedNameIndex.deleteDataInner",
+    "family": "INDEX_STORAGE_WORK",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "com.intellij.openapi.vfs.newvfs.persistent.FSRecordsImpl.getName",
+    "family": "INDEX_STORAGE_WORK",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "com.intellij.openapi.vfs.newvfs.persistent.FSRecordsImpl.update",
+    "family": "INDEX_STORAGE_WORK",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "com.intellij.workspaceModel.core.fileIndex.impl.WorkspaceFileIndexImpl.processContentFilesUnderExcludedDirectory$lambda$0",
+    "family": "INDEX_STORAGE_WORK",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "org.jetbrains.plugins.textmate.regex.TextMateRangeKt.get-Sp08x1s",
+    "family": "REGEX",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "com.intellij.workspaceModel.core.fileIndex.impl.ExcludedFileSet$ByFileKind.computeMasks",
+    "family": "INDEX_STORAGE_WORK",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "java.util.regex.Pattern$Start.match",
+    "family": "REGEX",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "java.io.WinNTFileSystem.canonicalize",
+    "family": "FILESYSTEM_IO",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "java.lang.ClassLoader.defineClass0",
+    "family": "CLASS_LOADING",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "java.lang.ClassLoader.defineClass2",
+    "family": "CLASS_LOADING",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "java.lang.ClassLoader.loadClass",
+    "family": "CLASS_LOADING",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "java.lang.ClassLoader.defineClassSourceLocation",
+    "family": "CLASS_LOADING",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "java.util.zip.Inflater.inflateBufferBuffer",
+    "family": "COMPRESSION",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "java.util.zip.Inflater.inflateBufferBytes",
+    "family": "COMPRESSION",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "java.util.zip.Inflater.end",
+    "family": "COMPRESSION",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "sun.nio.ch.FileDispatcherImpl.read0",
+    "family": "FILESYSTEM_IO",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "sun.nio.fs.WindowsNativeDispatcher.FindNextFile0",
+    "family": "FILESYSTEM_IO",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "sun.nio.fs.WindowsNativeDispatcher.GetFileAttributesEx0",
+    "family": "FILESYSTEM_IO",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "sun.nio.fs.WindowsNativeDispatcher.GetFinalPathNameByHandle",
+    "family": "FILESYSTEM_IO",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "sun.nio.fs.WindowsNativeDispatcher.GetLogicalDrives",
+    "family": "FILESYSTEM_IO",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "com.sun.imageio.plugins.png.PNGImageReader.decodePass",
+    "family": "IMAGE_LOADING_PROCESSING",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "com.sun.imageio.plugins.png.PNGImageReader.createRaster",
+    "family": "IMAGE_LOADING_PROCESSING",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "com.intellij.ui.svg.SvgCacheManagerKt.readImage",
+    "family": "IMAGE_LOADING_PROCESSING",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "org.jetbrains.plugins.textmate.regex.TextMateRegexFacadeRememberLastMatch.match-ZRjI0jQ",
+    "family": "REGEX",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "javax.imageio.stream.FileCacheImageInputStream$StreamDisposerRecord.dispose",
+    "family": "IMAGE_LOADING_PROCESSING",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "jdk.internal.loader.NativeLibraries.load",
+    "family": "CLASS_LOADING",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "sun.nio.fs.WindowsNativeDispatcher.DeleteFile0",
+    "family": "FILESYSTEM_IO",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "sun.nio.fs.WindowsNativeDispatcher.SetEndOfFile",
+    "family": "FILESYSTEM_IO",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "com.intellij.platform.syntax.psi.impl.NodeData.getInternedText",
+    "family": "PARSING_LEXING",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "com.intellij.ui.svg.SvgCacheManagerKt.createIconCacheKey-2Mr4RHQ",
+    "family": "IMAGE_LOADING_PROCESSING",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "com.intellij.util.io.SimpleStringPersistentEnumerator.enumerate",
+    "family": "INDEX_STORAGE_WORK",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "com.intellij.json.syntax._JsonLexer.advance",
+    "family": "PARSING_LEXING",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "com.intellij.json.syntax._JsonLexer.codePoint",
+    "family": "PARSING_LEXING",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "com.intellij.platform.syntax.psi.impl.NodeData.createLeaf",
+    "family": "PARSING_LEXING",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "com.intellij.platform.syntax.psi.impl.NodeData.insertLeaves",
+    "family": "PARSING_LEXING",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "com.intellij.openapi.vfs.newvfs.persistent.FSRecordsImpl.getNameByNameId",
+    "family": "INDEX_STORAGE_WORK",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "com.intellij.openapi.vfs.newvfs.persistent.FSRecordsImpl.readSymlinkTarget",
+    "family": "INDEX_STORAGE_WORK",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "com.intellij.openapi.vfs.newvfs.persistent.PersistentFSContentAccessor.acquireContentRecord",
+    "family": "INDEX_STORAGE_WORK",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "com.intellij.workspaceModel.core.fileIndex.impl.WorkspaceFileIndexDataImpl.ensureIsUpToDate",
+    "family": "INDEX_STORAGE_WORK",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "com.intellij.platform.syntax.impl.builder.MarkerProduction.findLinearly",
+    "family": "PARSING_LEXING",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "com.intellij.platform.syntax.impl.builder.MarkerProduction.findMarkerAtLexeme",
+    "family": "PARSING_LEXING",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "com.intellij.platform.syntax.impl.builder.SyntaxTreeBuilderImpl$WhitespaceBalancer.balanceMarkerAndReturnNewIndex",
+    "family": "PARSING_LEXING",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "com.intellij.platform.syntax.impl.builder.SyntaxTreeBuilderImpl.remapCurrentToken",
+    "family": "PARSING_LEXING",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "com.intellij.platform.syntax.impl.builder.SyntaxTreeBuilderImpl.rollbackTo$intellij_platform_syntax",
+    "family": "PARSING_LEXING",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "com.intellij.platform.syntax.lexer.Builder.performLexing",
+    "family": "PARSING_LEXING",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "com.intellij.platform.syntax.util.runtime.impl.SyntaxGeneratedParserRuntimeImpl.enter_section_-T529yjc",
+    "family": "PARSING_LEXING",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "com.intellij.platform.syntax.util.runtime.impl.SyntaxGeneratedParserRuntimeImpl.exit_section_",
+    "family": "PARSING_LEXING",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "com.intellij.openapi.vfs.newvfs.persistent.FSRecordsImpl.updateSymlinksForNewChildren",
+    "family": "INDEX_STORAGE_WORK",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "com.intellij.platform.syntax.impl.builder.MarkerProduction.addMarker",
+    "family": "PARSING_LEXING",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "java.io.FileOutputStream.writeBytes",
+    "family": "FILESYSTEM_IO",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "com.intellij.platform.syntax.psi.ParsingDiagnostics.registerLexing",
+    "family": "PARSING_LEXING",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "com.intellij.platform.syntax.util.runtime.impl.MyList.trimSize-impl",
+    "family": "PARSING_LEXING",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "java.util.regex.Matcher.match",
+    "family": "REGEX",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "java.util.regex.Pattern$BmpCharProperty.match",
+    "family": "REGEX",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "java.util.regex.Pattern$SliceNode.study",
+    "family": "REGEX",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "java.util.regex.Pattern.compile",
+    "family": "REGEX",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "java.util.regex.Pattern.expr",
+    "family": "REGEX",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "sun.nio.fs.WindowsNativeDispatcher.GetFileAttributesEx",
+    "family": "FILESYSTEM_IO",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "sun.nio.fs.WindowsNativeDispatcher.GetFullPathName0",
+    "family": "FILESYSTEM_IO",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "com.intellij.platform.syntax.util.runtime.impl.SyntaxGeneratedParserRuntimeImpl.nextTokenIsSlow",
+    "family": "PARSING_LEXING",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "com.intellij.workspaceModel.core.fileIndex.impl.WorkspaceFileIndexImpl$processContentUnderDirectory$visitor$1.visitFileEx",
+    "family": "INDEX_STORAGE_WORK",
+    "group": "WORK_CANDIDATE"
+  },
+  {
+    "evidence": "com.intellij.workspaceModel.core.fileIndex.impl.WorkspaceFileIndexImpl.getMainIndexData",
+    "family": "INDEX_STORAGE_WORK",
+    "group": "WORK_CANDIDATE"
+  }
+]

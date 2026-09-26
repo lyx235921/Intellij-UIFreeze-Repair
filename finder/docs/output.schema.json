@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:finder:source-locations:1",
+  "title": "Finder current-source locations, one JSONL record",
+  "type": "object",
+  "required": ["schema_version", "record_id", "workbook_sha256", "source_root", "input", "parse", "threads", "ui_thread_ids", "cause_thread_ids", "entry_frames", "call_edges", "location_summary", "index_diagnostics", "repair_analysis"],
+  "properties": {
+    "schema_version": {"const": "finder-source-locations/1"},
+    "record_id": {"type": "string"},
+    "workbook_sha256": {"$ref": "#/$defs/hash"},
+    "source_root": {"type": "string"},
+    "input": {
+      "type": "object", "required": ["sheet", "row", "occurrences", "stack_sha256", "raw_stack"],
+      "properties": {"sheet": {"type": "string"}, "row": {"type": "integer", "minimum": 1}, "occurrences": {}, "stack_sha256": {"$ref": "#/$defs/hash"}, "raw_stack": {"type": "string"}}
+    },
+    "parse": {
+      "type": "object", "required": ["status", "diagnostics", "unparsed_lines"],
+      "properties": {"status": {"enum": ["PARSED", "PARTIAL", "FAILED"]}, "diagnostics": {"$ref": "#/$defs/strings"}, "unparsed_lines": {"$ref": "#/$defs/strings"}}
+    },
+    "threads": {"type": "array", "items": {"$ref": "#/$defs/thread"}},
+    "ui_thread_ids": {"$ref": "#/$defs/strings"},
+    "cause_thread_ids": {"$ref": "#/$defs/strings"},
+    "entry_frames": {"type": "array", "items": {"type": "object", "required": ["frame_id", "reason"], "properties": {"frame_id": {"type": "string"}, "reason": {"enum": ["THREAD_TOP", "topStack", "problemModuleStack"]}}}},
+    "call_edges": {"type": "array", "items": {"$ref": "#/$defs/edge"}},
+    "location_summary": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 0}},
+    "index_diagnostics": {"$ref": "#/$defs/strings"},
+    "repair_analysis": {"const": "NOT_PERFORMED"}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "strings": {"type": "array", "items": {"type": "string"}},
+    "nullable_string": {"type": ["string", "null"]},
+    "thread": {
+      "type": "object", "required": ["thread_id", "name", "state", "details", "role", "is_ui_thread", "frames", "unparsed_lines"],
+      "properties": {
+        "thread_id": {"type": "string"}, "name": {"type": "string"}, "state": {"type": "string"}, "details": {"$ref": "#/$defs/nullable_string"},
+        "role": {"enum": ["blocked", "cause"]}, "is_ui_thread": {"type": "boolean"},
+        "frames": {"type": "array", "items": {"$ref": "#/$defs/frame"}}, "unparsed_lines": {"$ref": "#/$defs/strings"}
+      }
+    },
+    "frame": {
+      "type": "object", "required": ["frame_id", "index", "label", "symbol", "location", "file", "line", "elided", "raw", "source"],
+      "properties": {
+        "frame_id": {"type": "string"}, "index": {"type": "integer"}, "label": {"$ref": "#/$defs/nullable_string"},
+        "symbol": {"$ref": "#/$defs/nullable_string"}, "location": {"$ref": "#/$defs/nullable_string"}, "file": {"$ref": "#/$defs/nullable_string"},
+        "line": {"type": ["integer", "null"]}, "elided": {"type": "boolean"}, "raw": {"type": "string"}, "source": {"$ref": "#/$defs/source"}
+      }
+    },
+    "source": {
+      "type": "object", "required": ["status", "reason", "candidates", "selected", "selection_basis", "source_diagnostics", "historical_identity"],
+      "properties": {
+        "status": {"enum": ["LOCATED", "CANDIDATE", "AMBIGUOUS", "UNRESOLVED"]}, "reason": {"$ref": "#/$defs/nullable_string"},
+        "candidates": {"type": "array", "items": {"$ref": "#/$defs/method"}},
+        "selected": {"anyOf": [{"type": "null"}, {"$ref": "#/$defs/method"}]},
+        "selection_basis": {"enum": [null, "UNIQUE_OWNER_METHOD", "ADJACENT_CALLEE_NAME"]},
+        "source_diagnostics": {"type": "array", "items": {"type": "object", "required": ["path", "reason"], "properties": {"path": {"type": "string"}, "reason": {"type": "string"}}}},
+        "historical_identity": {"const": "NOT_CHECKED"}
+      }
+    },
+    "method": {
+      "type": "object", "required": ["path", "sha256", "language", "owner", "method", "start_line", "end_line", "declaration", "basis"],
+      "properties": {
+        "path": {"type": "string"}, "sha256": {"$ref": "#/$defs/hash"}, "language": {"enum": ["java", "kt"]},
+        "owner": {"type": "string"}, "method": {"type": "string"}, "start_line": {"type": "integer", "minimum": 1},
+        "end_line": {"type": "integer", "minimum": 1}, "declaration": {"type": "string"}, "basis": {"enum": ["JAVA_AST", "KOTLIN_LEXICAL_CANDIDATE"]}
+      }
+    },
+    "edge": {
+      "type": "object", "required": ["caller_frame_id", "callee_frame_id", "status", "reason", "call_sites", "type_resolution"],
+      "properties": {
+        "caller_frame_id": {"type": "string"}, "callee_frame_id": {"type": "string"}, "status": {"enum": ["CALL_SITE_CANDIDATE", "UNVERIFIED"]},
+        "reason": {"$ref": "#/$defs/nullable_string"}, "type_resolution": {"const": "NOT_PERFORMED"},
+        "call_sites": {"type": "array", "items": {
+          "type": "object", "required": ["path", "sha256", "name", "line", "expression", "receiver", "evidence"],
+          "properties": {"path": {"type": "string"}, "sha256": {"$ref": "#/$defs/hash"}, "name": {"type": "string"}, "line": {"type": "integer", "minimum": 1}, "expression": {"type": "string"}, "receiver": {"$ref": "#/$defs/nullable_string"}, "evidence": {"enum": ["JAVA_AST_CALL", "KOTLIN_LEXICAL_CALL_CANDIDATE"]}}
+        }}
+      }
+    }
+  }
+}

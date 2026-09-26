@@ -1,0 +1,21 @@
+{
+  "records": 5891,
+  "candidates": 1363,
+  "category_counts": {
+    "Q2.5": 100,
+    "Q2.3": 672,
+    "Q2.6": 31,
+    "Q2.2": 34,
+    "Q2.1": 526,
+    "Q2.4": 33
+  },
+  "injected_test_paths": 17,
+  "write_intent_permit_context": 1023,
+  "row_categories_equal": true,
+  "finder_preserved": true,
+  "frame_references_valid": true,
+  "build_exit": 0,
+  "existing_tests": 14,
+  "new_boundary_cases": 13,
+  "full_cli_exit": 0
+}
