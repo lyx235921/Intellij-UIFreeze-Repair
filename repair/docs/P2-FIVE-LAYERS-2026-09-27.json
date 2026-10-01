@@ -1,0 +1,248 @@
+[
+  {
+    "row": 868,
+    "accepted": "ACCEPTED",
+    "patches": 0,
+    "methods": [],
+    "patch_hashes": []
+  },
+  {
+    "row": 1238,
+    "accepted": "ACCEPTED",
+    "patches": 1,
+    "methods": [
+      {
+        "layer": 1,
+        "method": "com.intellij.ui.AppIcon$Win7AppIcon._setOkBadge",
+        "status": "METHOD_LOCATED"
+      },
+      {
+        "layer": 2,
+        "method": "com.intellij.ui.AppIcon$BaseIcon.setOkBadge",
+        "status": "METHOD_LOCATED"
+      },
+      {
+        "layer": 3,
+        "method": "com.intellij.openapi.project.DumbServiceAppIconProgress.lambda$finish$1",
+        "status": "UNRESOLVED"
+      },
+      {
+        "layer": 4,
+        "method": "com.intellij.openapi.project.DumbServiceAppIconProgress$$Lambda/0x000000008cadc6f0.run",
+        "status": "UNRESOLVED"
+      },
+      {
+        "layer": 5,
+        "method": "com.intellij.util.concurrency.ChildContext$runInChildContext$1.invoke",
+        "status": "UNRESOLVED"
+      }
+    ],
+    "patch_hashes": [
+      "59b604c2cad7df0d67bea96f8834883533da6b720df9f58c605ac2c252306dd4"
+    ]
+  },
+  {
+    "row": 1774,
+    "accepted": "ACCEPTED",
+    "patches": 0,
+    "methods": [],
+    "patch_hashes": []
+  },
+  {
+    "row": 1775,
+    "accepted": "ACCEPTED",
+    "patches": 0,
+    "methods": [],
+    "patch_hashes": []
+  },
+  {
+    "row": 1779,
+    "accepted": "ACCEPTED",
+    "patches": 1,
+    "methods": [
+      {
+        "layer": 1,
+        "method": "com.intellij.ui.AppIcon$Win7AppIcon._setOkBadge",
+        "status": "METHOD_LOCATED"
+      },
+      {
+        "layer": 2,
+        "method": "com.intellij.ui.AppIcon$BaseIcon.setOkBadge",
+        "status": "METHOD_LOCATED"
+      },
+      {
+        "layer": 3,
+        "method": "com.intellij.openapi.project.DumbServiceAppIconProgress.lambda$finish$1",
+        "status": "UNRESOLVED"
+      },
+      {
+        "layer": 4,
+        "method": "com.intellij.openapi.project.DumbServiceAppIconProgress$$Lambda/0x000000001c12d618.run",
+        "status": "UNRESOLVED"
+      },
+      {
+        "layer": 5,
+        "method": "com.intellij.util.concurrency.ChildContext$runInChildContext$1.invoke",
+        "status": "UNRESOLVED"
+      }
+    ],
+    "patch_hashes": [
+      "59b604c2cad7df0d67bea96f8834883533da6b720df9f58c605ac2c252306dd4"
+    ]
+  },
+  {
+    "row": 1806,
+    "accepted": "ACCEPTED",
+    "patches": 1,
+    "methods": [
+      {
+        "layer": 1,
+        "method": "com.intellij.platform.core.nio.fs.TracingFileSystemProvider.newByteChannel",
+        "status": "METHOD_LOCATED"
+      },
+      {
+        "layer": 2,
+        "method": "com.intellij.ui.AppIcon$Win7AppIcon._setOkBadge",
+        "status": "METHOD_LOCATED"
+      },
+      {
+        "layer": 3,
+        "method": "com.intellij.ui.AppIcon$BaseIcon.setOkBadge",
+        "status": "METHOD_LOCATED"
+      },
+      {
+        "layer": 4,
+        "method": "com.intellij.openapi.project.DumbServiceAppIconProgress.lambda$finish$1",
+        "status": "UNRESOLVED"
+      },
+      {
+        "layer": 5,
+        "method": "com.intellij.openapi.project.DumbServiceAppIconProgress$$Lambda/0x0000000039c0b078.run",
+        "status": "UNRESOLVED"
+      }
+    ],
+    "patch_hashes": [
+      "59b604c2cad7df0d67bea96f8834883533da6b720df9f58c605ac2c252306dd4"
+    ]
+  },
+  {
+    "row": 1812,
+    "accepted": "ACCEPTED",
+    "patches": 1,
+    "methods": [
+      {
+        "layer": 1,
+        "method": "com.intellij.platform.core.nio.fs.TracingFileSystemProvider.delete",
+        "status": "METHOD_LOCATED"
+      },
+      {
+        "layer": 2,
+        "method": "com.intellij.ui.AppIcon$Win7AppIcon._setOkBadge",
+        "status": "METHOD_LOCATED"
+      },
+      {
+        "layer": 3,
+        "method": "com.intellij.ui.AppIcon$BaseIcon.setOkBadge",
+        "status": "METHOD_LOCATED"
+      },
+      {
+        "layer": 4,
+        "method": "com.intellij.openapi.project.DumbServiceAppIconProgress.lambda$finish$1",
+        "status": "UNRESOLVED"
+      },
+      {
+        "layer": 5,
+        "method": "com.intellij.openapi.project.DumbServiceAppIconProgress$$Lambda/0x0000000091bb70e0.run",
+        "status": "UNRESOLVED"
+      },
+      {
+        "layer": 1,
+        "method": "com.intellij.ui.AppIcon$Win7AppIcon._setOkBadge",
+        "status": "METHOD_LOCATED"
+      },
+      {
+        "layer": 2,
+        "method": "com.intellij.ui.AppIcon$BaseIcon.setOkBadge",
+        "status": "METHOD_LOCATED"
+      },
+      {
+        "layer": 3,
+        "method": "com.intellij.openapi.project.DumbServiceAppIconProgress.lambda$finish$1",
+        "status": "UNRESOLVED"
+      },
+      {
+        "layer": 4,
+        "method": "com.intellij.openapi.project.DumbServiceAppIconProgress$$Lambda/0x0000000091bb70e0.run",
+        "status": "UNRESOLVED"
+      },
+      {
+        "layer": 5,
+        "method": "com.intellij.util.concurrency.ChildContext$runInChildContext$1.invoke",
+        "status": "UNRESOLVED"
+      }
+    ],
+    "patch_hashes": [
+      "59b604c2cad7df0d67bea96f8834883533da6b720df9f58c605ac2c252306dd4"
+    ]
+  },
+  {
+    "row": 1813,
+    "accepted": "ACCEPTED",
+    "patches": 1,
+    "methods": [
+      {
+        "layer": 1,
+        "method": "com.intellij.platform.core.nio.fs.TracingFileSystemProvider.delete",
+        "status": "METHOD_LOCATED"
+      },
+      {
+        "layer": 2,
+        "method": "com.intellij.ui.AppIcon$Win7AppIcon._setOkBadge",
+        "status": "METHOD_LOCATED"
+      },
+      {
+        "layer": 3,
+        "method": "com.intellij.ui.AppIcon$BaseIcon.setOkBadge",
+        "status": "METHOD_LOCATED"
+      },
+      {
+        "layer": 4,
+        "method": "com.intellij.openapi.project.DumbServiceAppIconProgress.lambda$finish$1",
+        "status": "UNRESOLVED"
+      },
+      {
+        "layer": 5,
+        "method": "com.intellij.openapi.project.DumbServiceAppIconProgress$$Lambda/0x00000000a1ffd760.run",
+        "status": "UNRESOLVED"
+      },
+      {
+        "layer": 1,
+        "method": "com.intellij.ui.AppIcon$Win7AppIcon._setOkBadge",
+        "status": "METHOD_LOCATED"
+      },
+      {
+        "layer": 2,
+        "method": "com.intellij.ui.AppIcon$BaseIcon.setOkBadge",
+        "status": "METHOD_LOCATED"
+      },
+      {
+        "layer": 3,
+        "method": "com.intellij.openapi.project.DumbServiceAppIconProgress.lambda$finish$1",
+        "status": "UNRESOLVED"
+      },
+      {
+        "layer": 4,
+        "method": "com.intellij.openapi.project.DumbServiceAppIconProgress$$Lambda/0x00000000a1ffd760.run",
+        "status": "UNRESOLVED"
+      },
+      {
+        "layer": 5,
+        "method": "com.intellij.util.concurrency.ChildContext$runInChildContext$1.invoke",
+        "status": "UNRESOLVED"
+      }
+    ],
+    "patch_hashes": [
+      "59b604c2cad7df0d67bea96f8834883533da6b720df9f58c605ac2c252306dd4"
+    ]
+  }
+]

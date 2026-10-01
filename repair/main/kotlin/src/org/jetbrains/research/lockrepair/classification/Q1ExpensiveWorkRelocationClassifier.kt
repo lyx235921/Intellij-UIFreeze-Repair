@@ -259,7 +259,44 @@ object Q1ExpensiveWorkRelocationClassifier {
           add("record_id", record["record_id"])
           add("classification", classify(record))
         }
-        else locate(record, Path.of(args.firstOrNull() ?: record["source_root"].asString))
+        else locate(record, Path.of(args.firstOrNull { !it.startsWith("--") } ?: record["source_root"].asString))
+        if (args.any { it in setOf("--s1-q16-method", "--extract-method", "--s1-p2", "--repair-selection",
+                                  "--s1-regex", "--s1-q13", "--s1-storage", "--s1-loading") }) {
+          require("--count-only" !in args)
+          val context = org.jetbrains.research.lockrepair.pool.s1.ExtractMethod.locateMethod(
+            record, result, if ("--s1-q16-method" in args && args.none {
+              it in setOf("--repair-selection", "--s1-q13", "--s1-storage", "--s1-loading")
+            }) "Q1.6" else null)
+          result.add("method_context", context)
+          val q13 = if ("--s1-q13" in args || "--s1-storage" in args || "--repair-selection" in args) {
+            org.jetbrains.research.lockrepair.pool.s1.P1StorageRelocation.propose(
+              record, result, Path.of(result["source_root"].asString))
+          } else null
+          if ("--s1-q13" in args) result.add("s1_q13", q13)
+          if ("--s1-storage" in args) result.add("s1_storage", q13)
+          val loading = if ("--s1-loading" in args || "--repair-selection" in args) {
+            org.jetbrains.research.lockrepair.pool.s1.P1ClassLoadingPreload.propose(record, result, Path.of(result["source_root"].asString))
+          } else null
+          if ("--s1-loading" in args) result.add("s1_loading", loading)
+          if ("--s1-regex" in args) result.add("s1_regex", org.jetbrains.research.lockrepair.pool.s1.P1RegexPrecompilation.propose(
+            context, Path.of(result["source_root"].asString)))
+          if ("--s1-q16-method" in args) result.add("s1_q16", context)
+          if ("--repair-selection" in args) {
+            val selection = org.jetbrains.research.lockrepair.pool.s1.RepairSelection.select(
+              result.getAsJsonObject("classification"), context, Path.of(result["source_root"].asString), q13, loading)
+            result.add("repair_selection", selection)
+            if ("--s1-p2" in args) result.add("s1_p2", selection["p2_evaluation"].deepCopy())
+          }
+          else if ("--s1-p2" in args) {
+            result.add("s1_p2", org.jetbrains.research.lockrepair.pool.s1.P2ExpensiveWorkRelocation.propose(
+              context, Path.of(result["source_root"].asString)))
+          }
+        }
+        if ("--s1-p1" in args) {
+          require("--count-only" !in args)
+          result.add("s1_p1", org.jetbrains.research.lockrepair.pool.s1.P1PreloadBeforeCriticalRegion.propose(
+            record, result, Path.of(result["source_root"].asString)))
+        }
         System.out.write((gson.toJson(result) + "\n").toByteArray(Charsets.UTF_8))
         System.out.flush()
       }

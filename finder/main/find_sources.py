@@ -4,6 +4,7 @@ import argparse
 from collections import Counter
 import hashlib
 import json
+import re
 from pathlib import Path
 import sys
 
@@ -15,7 +16,15 @@ from source_locator import SourceLocator
 SCHEMA_VERSION = "finder-source-locations/1"
 
 
+def excluded_huawei_symbols(record):
+  """Match package boundaries, including module/loader prefixes and synthetic frames."""
+  return sorted({frame["symbol"] for thread in record["threads"] for frame in thread["frames"]
+                 if re.search(r"(?:^|/)com\.huawei\.", frame.get("symbol") or "")})
+
+
 def locate_record(record, locator):
+  if excluded_huawei_symbols(record):
+    return None
   threads, edges, entries = [], [], []
   for ti, thread in enumerate(record["threads"]):
     frames = []
@@ -60,22 +69,30 @@ def main(argv=None):
   locator = SourceLocator(args.source_root)
   wanted = set(args.row or [])
   found, frame_counts, edge_counts = set(), Counter(), Counter()
+  skipped = 0
   workbook_hash = hashlib.sha256(args.workbook.read_bytes()).hexdigest()
   with args.output.open("x", encoding="utf-8") as stream:
     for record in read_records(args.workbook):
       if wanted and record["row"] not in wanted:
         continue
+      found.add(record["row"])
       result = locate_record(record, locator)
+      if result is None:
+        skipped += 1
+        print(json.dumps({"record_id": record["record_id"], "row": record["row"],
+                          "status": "SKIPPED_HUAWEI_CLOSED_SOURCE",
+                          "symbols": excluded_huawei_symbols(record)}, ensure_ascii=False), file=sys.stderr)
+        continue
       result["source_root"] = str(locator.root)
       result["workbook_sha256"] = workbook_hash
       result["index_diagnostics"] = locator.index_errors
       stream.write(json.dumps(result, ensure_ascii=False) + "\n")
-      found.add(record["row"])
       frame_counts.update(result["location_summary"])
       edge_counts.update(e["status"] for e in result["call_edges"])
   if wanted - found:
     parser.error(f"Requested rows absent; output contains only available rows: {sorted(wanted - found)}")
-  print(json.dumps({"records": len(found), "frames": dict(frame_counts), "edges": dict(edge_counts),
+  print(json.dumps({"records": len(found) - skipped, "skipped_huawei_records": skipped,
+                    "input_records": len(found), "frames": dict(frame_counts), "edges": dict(edge_counts),
                     "source_files_read": len(locator.cache), "index_errors": locator.index_errors}), file=sys.stderr)
   return 0
 

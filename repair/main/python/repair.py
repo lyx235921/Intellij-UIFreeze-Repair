@@ -200,11 +200,26 @@ def main(argv=None):
   parser.add_argument("--q1-classpath", help="Enable Kotlin Q1; classpath containing Q1, Kotlin stdlib and Gson")
   parser.add_argument("--q2-classpath", help="Enable Kotlin Q2 stack classification; uses the same build as Q1")
   parser.add_argument("--java", default="java", help="Java executable for Q1")
-  parser.add_argument("--source-root", type=Path, help="Override Finder source root for Q1")
+  parser.add_argument("--source-root", type=Path, help="Override Finder source root for Q1 and S2 extraction")
   parser.add_argument("--q1-count-only", action="store_true", help="Classify stack symbols without reading source files")
+  parser.add_argument("--s1-q16-method", action="store_true", help="Locate the complete project method on a Q1.6 stack path")
+  parser.add_argument("--extract-method", action="store_true", help="Extract project method context for Q1 matched categories")
+  parser.add_argument("--s1-p2", action="store_true", help="Extract context and generate a supported P2 candidate patch without applying it")
+  parser.add_argument("--repair-selection", action="store_true", help="Select P1/P2 from stack and source context; defer P3 until both fail")
+  parser.add_argument("--s1-p1", action="store_true", help="Generate an experimental source-bound P1 reload patch without applying it")
+  parser.add_argument("--s1-regex", action="store_true", help="Generate a source-bound P1 regex precompilation candidate")
+  parser.add_argument("--s1-q13", action="store_true", help="Evaluate five Q1.3 storage triggers and generate supported relocation candidates")
+  parser.add_argument("--s1-storage", action="store_true", help="Evaluate storage and filesystem path preload bindings")
+  parser.add_argument("--s1-loading", action="store_true", help="Evaluate class and native library preload bindings")
+  parser.add_argument("--s2-extract-method", action="store_true", help="Extract up to five method contexts for each Q2 wait")
+  parser.add_argument("--s2-repair-selection", action="store_true", help="Extract Q2 context and rank conditional P1/P2/P3 plans and G1 guard; no patches")
   args = parser.parse_args(argv)
   if args.q1_count_only and not args.q1_classpath:
     parser.error("--q1-count-only requires --q1-classpath")
+  if (args.s2_extract_method or args.s2_repair_selection) and not args.q2_classpath:
+    parser.error("S2 extraction/selection requires --q2-classpath")
+  if (args.s1_q16_method or args.extract_method or args.s1_p2 or args.repair_selection or args.s1_p1 or args.s1_regex or args.s1_q13 or args.s1_storage or args.s1_loading) and (not args.q1_classpath or args.q1_count_only):
+    parser.error("Method extraction/P2 requires --q1-classpath without --q1-count-only")
   counts = Counter()
   q1_count = 0
   method_counts = Counter()
@@ -212,12 +227,19 @@ def main(argv=None):
   q2_count = 0
   q2_methods = Counter()
   q2_categories = Counter()
+  source_skipped_points = 0
+  source_skipped_records = 0
   with ExitStack() as resources:
     source = resources.enter_context(args.input.open(encoding="utf-8-sig"))
     target = resources.enter_context(args.output.open("x", encoding="utf-8"))
     if args.q2_classpath:
+      q2_command = [args.java, "-cp", args.q2_classpath, "org.jetbrains.research.lockrepair.Q2SynchronousWaitControlClassifier"]
+      if args.s2_extract_method or args.s2_repair_selection:
+        if args.source_root:
+          q2_command.append(str(args.source_root))
+        q2_command.append("--s2-repair-selection" if args.s2_repair_selection else "--s2-extract-method")
       q2_worker = resources.enter_context(subprocess.Popen(
-        [args.java, "-cp", args.q2_classpath, "org.jetbrains.research.lockrepair.Q2SynchronousWaitControlClassifier"],
+        q2_command,
         stdin=subprocess.PIPE, stdout=subprocess.PIPE, encoding="utf-8"))
     if args.q1_classpath:
       command = [args.java, "-cp", args.q1_classpath, "org.jetbrains.research.lockrepair.Q1ExpensiveWorkRelocationClassifier"]
@@ -225,6 +247,24 @@ def main(argv=None):
         command.append(str(args.source_root))
       if args.q1_count_only:
         command.append("--count-only")
+      if args.s1_q16_method:
+        command.append("--s1-q16-method")
+      if args.extract_method:
+        command.append("--extract-method")
+      if args.repair_selection:
+        command.append("--repair-selection")
+      if args.s1_p1:
+        command.append("--s1-p1")
+      if args.s1_regex:
+        command.append("--s1-regex")
+      if args.s1_q13:
+        command.append("--s1-q13")
+      if args.s1_storage:
+        command.append("--s1-storage")
+      if args.s1_loading:
+        command.append("--s1-loading")
+      if args.s1_p2:
+        command.append("--s1-p2")
       worker = resources.enter_context(subprocess.Popen(command, stdin=subprocess.PIPE, stdout=subprocess.PIPE, encoding="utf-8"))
     for result in receive(source):
       if args.q2_classpath and result["intake_status"] == "ACCEPTED":
@@ -250,6 +290,10 @@ def main(argv=None):
         category_counts.update({c["category"] for c in result["q1"]["classification"]["categories"]})
         if not args.q1_count_only:
           result["source_verification"] = "SEE_Q1_LOCATIONS"
+        selection = result["q1"].get("repair_selection", {})
+        skipped = sum(d["status"] == "SKIPPED_SOURCE_UNAVAILABLE" for d in selection.get("decisions", []))
+        source_skipped_points += skipped
+        source_skipped_records += bool(skipped)
       target.write(json.dumps(result, ensure_ascii=False, allow_nan=False) + "\n")
       counts[result["intake_status"]] += 1
     if args.q1_classpath:
@@ -263,6 +307,7 @@ def main(argv=None):
   print(json.dumps({"q1_candidates": q1_count, "q1_methods": dict(method_counts), "q1_categories": dict(category_counts), "records": sum(counts.values()), "accepted": counts["ACCEPTED"],
                     "rejected": counts["REJECTED"], "q2_candidates": q2_count,
                     "q2_methods": dict(q2_methods), "q2_categories": dict(q2_categories),
+                    "source_skipped_points": source_skipped_points, "source_skipped_records": source_skipped_records,
                     "repair_status": "NOT_STARTED"}), file=sys.stderr)
   return 0 if counts["ACCEPTED"] and not counts["REJECTED"] else 2
 

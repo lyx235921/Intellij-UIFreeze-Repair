@@ -1,0 +1,1197 @@
+{
+  "date": "2026-10-01",
+  "target": "lyx235921/Intellij-UIFreeze-Repair",
+  "base": "9feb56991f2870e3b1d9732f11f3a0a3e391b610",
+  "source_checkout_commit": "11cd0b6f5242369b47f262a5de247bc71b037ae2",
+  "source_prefix": "tools/edt-freeze-finder/",
+  "files": [
+    {
+      "path": ".gitignore",
+      "git_blob": "99198a33fb2038eba7cd7733635f0690a87beac6",
+      "sha256": "085228fa30386a93c304d0b54d0f28bb0557dee12dcc5afbfa7ae39b6fa70b91",
+      "bytes": 56,
+      "origin": "preserved target"
+    },
+    {
+      "path": "finder/docs/EFFECT-CANDIDATE-EVALUATION.md",
+      "git_blob": "c551cf3d903d2ac9c3085be263949d8bb3257a0b",
+      "sha256": "d1890c5449d03fc04196c04b854b4129b337aabd85e31ad2315482b8eb6ed197",
+      "bytes": 4399,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "finder/docs/EFFECT-CANDIDATE-IMPLEMENTATION-PLAN.md",
+      "git_blob": "76b0c1e311eb74dfccbd86b8c24c93de2179e223",
+      "sha256": "6c0ffa3087412893eaf742288b0599d8e9ee0f5a4bbbe275ffb93904c90fdf0a",
+      "bytes": 51057,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "finder/docs/EFFECT-CANDIDATE-REVISE.md",
+      "git_blob": "74ee3b39e47f2035925fdd95a2a0e69acc7e4f02",
+      "sha256": "7c5d5f4a0b2a8587d4d34210ee1495809dd8f35192c07d354db7e21fafc32685",
+      "bytes": 9073,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "finder/docs/OUTPUT-FORMAT.md",
+      "git_blob": "6175abe6c7ae59508bfcd4a7d0e75ea38878dd24",
+      "sha256": "e135e593e200164a25d4589fff8419fc42c006c43721e9e0adebf7a1086e5b29",
+      "bytes": 5965,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "finder/docs/output.schema.json",
+      "git_blob": "630747b04ea8adb18cc63e03ebc752347a7be43a",
+      "sha256": "3e08c36dc4acbcb426d4de721200a721660b4d36dd04acf411c8dfb2a6187f69",
+      "bytes": 5510,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "finder/docs/ROW-2-SOURCE-LOCATION-2026-09-26.md",
+      "git_blob": "6ec436e0a8d504f092ca4fb5f213312867cf96e9",
+      "sha256": "761b4aa9bdd5904d650699ff0b27fc060e011692ae073058fb18f8e59965505a",
+      "bytes": 3343,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "finder/docs/row2-output.json",
+      "git_blob": "eed8ec9be2ed4ac5017681c84efcfed70bd65cf5",
+      "sha256": "327b762b0724b24eedf1ceb27783f3b8d4a0d52f8d6b09d9e9a46a6e9e74c0e0",
+      "bytes": 69533,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "finder/docs/SOURCE-LOCATION-VALIDATION-2026-09-26.md",
+      "git_blob": "e283245d57663a4007ed6ac59e95bddee0b62e20",
+      "sha256": "a69228a81b7b578e625af40b12bc137cd4f17eec356a0d63f8d2453050d309f8",
+      "bytes": 4344,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "finder/docs/STAGE2-DESIGN.md",
+      "git_blob": "d9ee7b9056b6b7d289df40fbe862da2aadcf2b23",
+      "sha256": "81dd1e63e3a7a2d761bdc3cf8f8aba7c34109988d0fa6272d7fcf201a92f1d6e",
+      "bytes": 21366,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "finder/docs/STAGE2-IMPLEMENTATION-PLAN.md",
+      "git_blob": "4c5abcf414cfc7064bb0735dc45dabb7fe0d62cb",
+      "sha256": "3ec9f04e2e83721c1a0341fb0f6f2cc767955c2f38aa239c0632d4ecd5e96c2a",
+      "bytes": 35204,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "finder/docs/STAGE3-IMPLEMENTATION-PLAN.md",
+      "git_blob": "e02013608af1f3e50d55658a568dd6a941326c6d",
+      "sha256": "690a5271d1f6e3b073c10bc5ed7d1904a6ef2f26d6d2e00475e4118c9932a011",
+      "bytes": 22012,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "finder/IMPLEMENTATION.md",
+      "git_blob": "815eed50c3deea45e891546d3ed200ee4b73c1e8",
+      "sha256": "5844984f0f98dacae2598b921357d9415ca48652792e8318f958499ce6d8d025",
+      "bytes": 16297,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "finder/main/find_sources.py",
+      "git_blob": "df95a8011f6aeeb8c935ef10e572661bbf3647da",
+      "sha256": "10b46fb153b8e0434228d592f9c0a23e6627980dde26cbe5b5924ed9995a3dab",
+      "bytes": 4935,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "finder/main/real_stack_input.py",
+      "git_blob": "7d7b0c2b19c3606fcce057cb89fa0e9f71c7211a",
+      "sha256": "cfef63b8c8c12a0c5fbd894e2e43d34d95aed077f6cbb15b084c252545d1ef1f",
+      "bytes": 6462,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "finder/main/requirements.txt",
+      "git_blob": "8a57ad3826fc40705e42a67bbb62673f3934758b",
+      "sha256": "93a58aad5903a000c868dc8477759569ce74f37dbfe7f380f00dbbd3c0aefec4",
+      "bytes": 61,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "finder/main/source_locator.py",
+      "git_blob": "998bd6b6181355a6f2a967b8dcd52050186094e9",
+      "sha256": "159ce1c22d1f7ada6ff612979765382226cb8d80d9a877c4bf7827ac4b28c686",
+      "bytes": 11459,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "finder/README.md",
+      "git_blob": "d421b191ecaaf0b27676f70b0f3c993e5bcb88e3",
+      "sha256": "3e9f0591f790f3ce0056869dd65dca05417c9c245f9b1624b209cd5fe24e0669",
+      "bytes": 4289,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "finder/Test/README.md",
+      "git_blob": "bc261f66a0eb4065c276b419ba34561b42917b16",
+      "sha256": "a88e66fcec18f13abd211e5d62ad4369c10d941e06e67a7b36d56a2e9e222a1d",
+      "bytes": 2778,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "finder/Test/run_full_test.py",
+      "git_blob": "d2ed6a00e1a04dfed462e6e61e68be70b54bf9a6",
+      "sha256": "bcd04e95349d380114613b9897291a877f45efa54bc2430b7d8f39d41dbca2df",
+      "bytes": 5865,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "finder/Test/test_real_stack_input.py",
+      "git_blob": "e6707c04886b827664fd2e95588b0cee94900177",
+      "sha256": "a13555612eec9af16f38d54d6ffdf71601457eea2f467d2ef07f88318d7060bf",
+      "bytes": 3048,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "finder/Test/test_source_locator.py",
+      "git_blob": "19e0a422df6c1baabff090069ab37415055bc736",
+      "sha256": "0ccd14e7a6d648a718ac66ad3f102117f9267a3f39d3fd9da4d80e15d0e06416",
+      "bytes": 8734,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "finder/Test/test_source_locator_real.py",
+      "git_blob": "caa23255ca90e4f4b7cfb294ccf848d4eda8e5b2",
+      "sha256": "72b1d2fe8ff5c361142d93f800a7d1c6e94d03c844f8c57d2b4fce1cb83384f6",
+      "bytes": 1738,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "finder/Test/test_state_statistics.py",
+      "git_blob": "c5d02a61fe982288ff9fb25d655b16477447b137",
+      "sha256": "0bb7f0441e4a5112ce1298e45ffe81e1c1a80dec3062a8632a4b8120eac7a3c0",
+      "bytes": 3290,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "finder/Test/verify_real_output.py",
+      "git_blob": "f5b1f155d028b5abb6dbf01dcba4886db135c71f",
+      "sha256": "d51af5cb3ff29e9058af18f9a6af05195f43ba00ea0fe133fb06c181b7e86a18",
+      "bytes": 3369,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "maintenance/audit_raw_q2.py",
+      "git_blob": "59e4eba049b2e6e1973a2257753d5b9035a24810",
+      "sha256": "008d083d2fc2ccd1646062c79a5943899a3d09440b1a4b69158601effd7e54a4",
+      "bytes": 6624,
+      "origin": "preserved target"
+    },
+    {
+      "path": "maintenance/raw-q2-20260926-final/REPORT.md",
+      "git_blob": "369bcd6508f8f4aabd61ee1a1c659c4533f82890",
+      "sha256": "d45f31775166baa54ccdf66f7a03a951dc5e0ce45e3065994ffba167eb6428ff",
+      "bytes": 5033,
+      "origin": "preserved target"
+    },
+    {
+      "path": "maintenance/raw-q2-20260926-final/summary.json",
+      "git_blob": "4d4abcd586390824715ad041713c80ce34a56dc8",
+      "sha256": "4dcdb1d6a62661c6df31c293fbdcbc52fb708e5602999a3fe91447061a5aade3",
+      "bytes": 36001,
+      "origin": "preserved target"
+    },
+    {
+      "path": "PROGRESS.md",
+      "git_blob": "4a6ad243b8535df19c9e7fa84c53aaf4b61920b0",
+      "sha256": "a00f41e7cf86c795420244ba3dda72bd8e5f83b8e86de440611721aad29a733c",
+      "bytes": 2186,
+      "origin": "standalone publication adaptation",
+      "original_git_blob": "4a6ad243b8535df19c9e7fa84c53aaf4b61920b0"
+    },
+    {
+      "path": "PUBLICATION-2026-10-01.md",
+      "git_blob": "ee8700abd39ff9a8916c1b666fa5f7b5cbc012c5",
+      "sha256": "61112e8b4740fc309851829fb28ce846f0ede2a083739720258e47d8783bd9a0",
+      "bytes": 6125,
+      "origin": "standalone publication adaptation",
+      "original_git_blob": "a9db11cd3216b4c9fa0bc5292310e0db86b0e7ae"
+    },
+    {
+      "path": "README.md",
+      "git_blob": "b884ac3c9662614443fa8254dc2a14329f5c57b3",
+      "sha256": "3b4769d6a9e11fa19d0e193252298938bd1590eee5777b58212de541ce6cb8ba",
+      "bytes": 2882,
+      "origin": "standalone publication adaptation",
+      "original_git_blob": "2fa9c50f8224bc5c91c94bd720d7b813d6133f68"
+    },
+    {
+      "path": "repair/AGENTS.md",
+      "git_blob": "35d554ef7b3cf85cca89e3909dbeb78c616860db",
+      "sha256": "4243ce6842ea321d72afade30ab24bfe87746535d57c7a4c13b1cccb142a4617",
+      "bytes": 1614,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/FINDNEXT-ASSESSMENT-2026-09-27.md",
+      "git_blob": "f2da63c504e1557aa8161072f1104743c1fe3701",
+      "sha256": "07a8e2a11bc8dd7a293b6c056e9970130ffaa8a312dc252cd8166f03737af627",
+      "bytes": 2779,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/FONT-BGT-EXPERIMENT-2026-09-26.json",
+      "git_blob": "797652c30c367f478ec43a7f7a1ac3b6cb55c79b",
+      "sha256": "2ec970c86961cd405e7e49489861ebf5f4eb029c51a3f443da69fcbd555f3f87",
+      "bytes": 2270,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/FONT-BGT-EXPERIMENT-2026-09-26.md",
+      "git_blob": "453ad905dc260d47a5401e686c5557e5f977fde7",
+      "sha256": "8e0c1600be7a1d92f87158f1c82384b2c95dc6b15daa588373ee9beae28af8ea",
+      "bytes": 3417,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/FULL-REPAIR-2026-09-28.md",
+      "git_blob": "14046dbd71a2b000ae27e839eb9784ab549a3a29",
+      "sha256": "52ca2e838c136be779bf69cb734f95569e837618657639b2478f3f0a4a5ff7c4",
+      "bytes": 5694,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/GETATTRIBUTES-ROW4746-2026-09-27.md",
+      "git_blob": "10f53844631cf2d2912fa09d7707a41cb441a0ea",
+      "sha256": "d4ebf5cb1febfca88a795c904ab85444d84d12e0c14a584d83e2113fad341365",
+      "bytes": 3101,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/layout-migration-2026-09-24.json",
+      "git_blob": "98e5353a807691af2190da7662af01f8e4454c3c",
+      "sha256": "5f56ade05d15b2c48cf48c5de11274defd50b02d1b50ad715b322f96c2bee87b",
+      "bytes": 236256,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/LAYOUT-MIGRATION-2026-09-24.md",
+      "git_blob": "fa6ba5d3c898690a7538c1549e1c7d750f7c8598",
+      "sha256": "d08e452e52395f5a59905bb44f3f2503e88778c6d55e37925336f87b2a39fd15",
+      "bytes": 7329,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/P1-BINDINGS-2026-09-27.md",
+      "git_blob": "52183f8f3c4ef00986b7dbd66e5cacb65fc3edc7",
+      "sha256": "d125f66a5e80b8e585650030303ccf4ceb5f0415d0248713873c2548e5992be6",
+      "bytes": 8262,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/P1-ELEVEN-CONSTRUCTION-2026-09-27.md",
+      "git_blob": "578d500ca663ae9c88da7a1ac8e1d2cd0ed4ee37",
+      "sha256": "86d1de82be113969ece4003ac99341e0e1ebef3ef9c66d196b472ac5c9100738",
+      "bytes": 11040,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/P1-FIRST-BUGS-2026-09-27.md",
+      "git_blob": "fb3379a0c2a48b952de199535a5e1309f95574d4",
+      "sha256": "bb53d7f99a8506c12c171db0c97735ea5ca00fe514ee6b0f0b42767e4e144fd9",
+      "bytes": 1709,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/P1-RELOAD-PATCH-2026-09-27.md",
+      "git_blob": "346e50e34abb5ada747df57a396025223f2127f8",
+      "sha256": "cf9c656356db961b27245eb0569280ddb565f6f798e2c9beba01e5bf55431dbf",
+      "bytes": 7032,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/P1-RELOAD-PLAN-2026-09-27.md",
+      "git_blob": "d61db6f98ef17c7db354b69984c91b2d70c357c7",
+      "sha256": "0209d84c1d1a2c7675dfa510ba1fc76008ff7f5b80a97619901ee35fa632bca9",
+      "bytes": 3863,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/P1-REMAINING-EIGHT-2026-09-27.md",
+      "git_blob": "9e65cc5495b5087734e12ed37071f89d72a944a5",
+      "sha256": "3053152dd7052ec10aa3a1b64714b82cbb41deaba042f597b9514b21b10801b5",
+      "bytes": 10024,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/P1-ROW1007-CONSTRUCTION-2026-09-27.md",
+      "git_blob": "db3bafba2d74ede0a7f3f5d7ce52fd18a4fe0e4d",
+      "sha256": "1875246460fe5e1dbbc1d0e3f97a8bd313ae4ca60c7d972b471b7d3920abefa2",
+      "bytes": 6610,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/P1-ROW4746-BLOCKED-2026-09-27.md",
+      "git_blob": "9ef05a3afbba2539b6ae587db9c1c96389597b14",
+      "sha256": "7ffddfbe2f5bed4aa64b186413ffea7249a33331be6401d9351db04c54b9af20",
+      "bytes": 9455,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/P1-ROW4746-VERIFICATION-2026-09-27.md",
+      "git_blob": "d2ebb623d149554650d0a0fe7b076cc5c8b32714",
+      "sha256": "01e99b5732c24c668f8d5d7e91805c08bf00a5369e6ea510de99897d21ae4dbf",
+      "bytes": 5202,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/P2-EIGHT-CASES-2026-09-27.json",
+      "git_blob": "6639094401efb7863a5a670dc5cdc14b4fcc68e8",
+      "sha256": "3b2df21dfc23b719948ba7eb3cc427c8e42ee7c5199c1ce6932f6add28414d83",
+      "bytes": 4836,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/P2-EIGHT-CASES-2026-09-27.md",
+      "git_blob": "5f0cfb45b1e791745d02443ead5f74c4a225adee",
+      "sha256": "069a7980c3ce73374d78f96e36e740347de91bd5246d4f4b7aca96081d31bb55",
+      "bytes": 2092,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/P2-FIVE-CASES-EFFECTIVENESS-2026-09-27.json",
+      "git_blob": "33e8d4b15c023defadc64821c98e4446b1eb9411",
+      "sha256": "ce5b2a466c960b7727b9fd01725b316d42077688389a79034fc3a5463aed8ef9",
+      "bytes": 1214,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/P2-FIVE-CASES-EFFECTIVENESS-2026-09-27.md",
+      "git_blob": "8afd5099a735310c59812feab3734d4f4e95e5b3",
+      "sha256": "10c5b8cc3569bed1a7504d8b372df10f0ccd17709e9a34ad2748bd5d3fb9d5e1",
+      "bytes": 2139,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/P2-FIVE-LAYERS-2026-09-27.json",
+      "git_blob": "df3cba3a04d3275fed486c7e2ff5ccbecd17034a",
+      "sha256": "24bc1dcf21c33dd872c4bc60745feb90f8725adbbfcd9853e1015ad1f977b703",
+      "bytes": 7001,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/P2-RESPONSIVENESS-2026-09-27.json",
+      "git_blob": "d9fd15f7b70f27a03647f6298e00967f65547749",
+      "sha256": "50382155978f8b985e1611277eda60c45490016ccfc9f88ec147f5ef8a5b9c4e",
+      "bytes": 1761,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/P2-RESPONSIVENESS-2026-09-27.md",
+      "git_blob": "99227f7e6369fda3bd337dd7caa913d655e450c1",
+      "sha256": "1a79ddc7865c9245b431264951add4d25a9cf0a40f91db63a513ccd5fdab8360",
+      "bytes": 1744,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/P3-REJECTED-ROW424-DISCUSSION-2026-09-28.md",
+      "git_blob": "929b2056164e3e8bd89a0a7a46f299e212ddcc9e",
+      "sha256": "65244f380e6784e806f9f59c11d858415214263f089e1cfebbd3e46ee79c3300",
+      "bytes": 6096,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/PATTERN-COMPILE-2026-09-27.md",
+      "git_blob": "7126c4ab0fcd6aa41b13d75fd0b9d289650725ac",
+      "sha256": "2f6ff41234389f98267ca0abf5af5300f5bbb24f246a962bc2af4cd72c54a2b5",
+      "bytes": 9402,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/Q1-75-METHODS-COUNT-2026-09-26.json",
+      "git_blob": "b547eab698fea4f1fd960ebe2eb0849357753a07",
+      "sha256": "0956cf1e0c0c898e098c358905f8b6cd4305aabe45e7c47a31de7094e4dd7896",
+      "bytes": 28885,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/Q1-CATEGORIES-2026-09-26.json",
+      "git_blob": "73a39d1f0d124dcc890dc8c5ceaab8b2074f81f7",
+      "sha256": "480785136c5c33f0a031b11a94957aa6ae96c570abc36e815b5da46df8a84e23",
+      "bytes": 3643,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/Q1-FILE-ATTRIBUTES-COUNT-2026-09-26.json",
+      "git_blob": "14ec678b8f8efd5770fb960c5b6b9654262ac659",
+      "sha256": "fdd457c09a476707d0d633b32adb0368f4a7bea01bdb7960e19dbedb8f0e96d8",
+      "bytes": 3457,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/Q1-FIRST-REPAIR-ASSESSMENT-2026-09-27.md",
+      "git_blob": "e870e03032c096168f6ec86209835511e2b3110a",
+      "sha256": "fa90f4d71ef4bd04eaa4befd0a8ed6fbc218ba680c07855f600827622332cd5a",
+      "bytes": 3060,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/Q1-P1-P3-MAPPING-2026-09-27.json",
+      "git_blob": "3fb5a1315e49036f0db4bd334ea42a1ddd70e97c",
+      "sha256": "b4b9270091e917d40ade5b8ac1bf278ed8ef58be624c64113c4eb84d7e163c89",
+      "bytes": 41566,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/Q1-P1-P3-MAPPING-2026-09-27.md",
+      "git_blob": "208d683aec77d9f48298175ad2a27560b614cd64",
+      "sha256": "68d8054a776006f00ab801cbc6e028331ffb366acb72ce3f15a7459e1c474aaf",
+      "bytes": 16752,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/Q1-SEVEN-METHODS-COUNT-2026-09-26.json",
+      "git_blob": "d6db7ee2d40fcee55f99f0f232d80303a55a26a5",
+      "sha256": "0a8a3526af9710b01ad2c6976cde28dda007d91cffab716742e99b77854f0811",
+      "bytes": 9842,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/Q1-UI-CHECK-2026-09-26.json",
+      "git_blob": "782dc032f49e3de579132cd549e79a513282265f",
+      "sha256": "9cc4bb8f03c21bcd3d62c095c5c10f9495634a2f7486d4b4f28f29fb711e6094",
+      "bytes": 14888,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/Q11-P2-ASSESSMENT-2026-09-27.md",
+      "git_blob": "e7a68cbd440e5401a1a5e14ec5f949c84c32ddd7",
+      "sha256": "98d39345d4f1d81dc93302adcd744978e69a2f63090e7781c99e746d04ce499e",
+      "bytes": 2008,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/Q13-REPAIR-CONSTRUCTION-2026-09-27.md",
+      "git_blob": "5fa83f1a2d2694fad8c0f89b65932357d9dca76d",
+      "sha256": "f914b834814d6bb1d4cd6377acbe39dd32ee99bd3e7a39294a57931c342a45db",
+      "bytes": 11404,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/Q2-VALIDATION-2026-09-26.json",
+      "git_blob": "6429e99618f9cc9e66433356323337128b3b39bf",
+      "sha256": "cc06331a223489172657541108ffbaa38aeb1114a23af1cea5203c5d0efb94dc",
+      "bytes": 446,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/READ0-ASSESSMENT-2026-09-27.md",
+      "git_blob": "d813c935c3f3ca436518e7c05656751d1417bc33",
+      "sha256": "89eb450e9caac0ad6618d5987ded19d84a25fd7fe7ec6161cbdada82e99c4343",
+      "bytes": 2895,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/REPAIR-ENTRY-VALIDATION-2026-09-26.md",
+      "git_blob": "d8419fbc1c1e782ee48fbed4c9837e742f607710",
+      "sha256": "34cf247dd05bd15ea0aec3c61210e320b44617f251c63bac2e22dcb3a94640bd",
+      "bytes": 2748,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/ROW-1807-S1-VALIDATION-2026-09-26.md",
+      "git_blob": "9f84680bb327921f7b8f6befa373e1c0c5564baf",
+      "sha256": "85d267bda98cd76a9f28c247059d6c589bcfc1db9ade520d44fd0f333b2af3b3",
+      "bytes": 2828,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/ROW124-CONTEXT-2026-09-27.md",
+      "git_blob": "afb982fea8e1eaaf8032b239e2f8532e9d7b62a9",
+      "sha256": "888f317a6207633f80e4ef13b2e0673f796db815424a0f69b09c4ebb4fafe711",
+      "bytes": 3293,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/ROW124-REFRESH-SOURCE-VERIFICATION-2026-09-27.md",
+      "git_blob": "e574afad7399a9c8a875a33792786c4a12c0eb3f",
+      "sha256": "4f71b7916b91ff595fe585907c2111a50ef717cf071bfed1e38c049c8a8c7a2e",
+      "bytes": 5644,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/S1-P2-2026-09-27.md",
+      "git_blob": "4d0791584d386837d47446ab608917e1db3038c5",
+      "sha256": "9d4e85900b7c6b3ea572874c2ed48596aa228fa7e60ffe0e0e2a5dbb82793321",
+      "bytes": 5746,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/S1-REPAIR-CONSTRUCTION-WORKFLOW.md",
+      "git_blob": "00e48a697287eb1a1071192b3b9cbb280e9527dc",
+      "sha256": "552cbc3a7b602c57016146992ee5fbac3737f82f9f2a212fc0775e8c6cb49c0c",
+      "bytes": 5917,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/S2-AWAIT-CONSTRUCTION-2026-09-28.md",
+      "git_blob": "bb7c981fde5f800e84526c93df8b73603e602a2f",
+      "sha256": "0dda6d9df5a90a10e0830bec7a22a902fac5e328203753964a8139331eb056a6",
+      "bytes": 5236,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/S2-CONTEXT-SELECTION-2026-09-28.md",
+      "git_blob": "214fa8048ecec7c6595665a9e4a20280e67b8d2a",
+      "sha256": "3e838d8d1d90b0068edde545a0956fe22ce34da43054aaa188934a5b491fecd4",
+      "bytes": 4288,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/S2-CYCLE-3587-CONSTRUCTION-2026-09-29.md",
+      "git_blob": "e2b4082a12faa9c1ecdaae136017460c35878668",
+      "sha256": "82e61ad0412d432f5a89c6b970f49a0cfbcddedcd6f1e7449925b265df2df97a",
+      "bytes": 3349,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/S2-EDT-SLEEP-AUDIT-2026-09-29.md",
+      "git_blob": "5acaddd704f15beeedb353f18238ee9a4266c460",
+      "sha256": "4ec8466095874c63a0cb7dc708144bcf0fb13f2e96a52566e29653de5ca14082",
+      "bytes": 4541,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/S2-FOUR-OWNERS-AUDIT-2026-09-29.md",
+      "git_blob": "f932fe06a15ebbed38c27a7e686b3d59227e8932",
+      "sha256": "aa14b11d3c000c79befee21ee3837d6f914ee81a4829e1093bcb5c28a7849731",
+      "bytes": 3347,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/S2-LIVE-TIMING-2026-09-28.md",
+      "git_blob": "5c9790708b96d995afdc538418213b6465c04a82",
+      "sha256": "fc6fa3d1d1226b33a7058b882a6e8a107485df58bca90f52ad44eb6a44d7e2c7",
+      "bytes": 3336,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/S2-METHOD-CLASSIFICATION-2026-09-28.md",
+      "git_blob": "68a076ecc0c2bcbde3cc7b082f05ae6106aeb96a",
+      "sha256": "024aae6c5538556e359660cebabefc96df153c1ebf363f9e9aa9d8d562328f65",
+      "bytes": 2928,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/S2-MONITOR-ENTRY-2026-09-29.md",
+      "git_blob": "863320b48f5eb0fb8d3ce1b9681af44d81c0ff75",
+      "sha256": "800dc21aa5b1a6d98ad6a4874c0fc40d09d962aa27db8e17838b2f99190e674b",
+      "bytes": 2435,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/S2-MONITOR-OWNERS-2026-09-29.md",
+      "git_blob": "3e9114b6ac32dd293ad57771c506fdd31fc93164",
+      "sha256": "3c6b1ba8fed20385c1b7ca5f357a51665e71c8b57b9dfc3cd8eb388efb4fbdf1",
+      "bytes": 2660,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/S2-P1-TIMEOUT-DISCUSSION-2026-09-28.md",
+      "git_blob": "923115e48ec331ee5acfaaaf99183e331e849791",
+      "sha256": "ce3d7a4faf6aab73975e056ea62d2cfe57cddf6cdb403515d2de55b05ab9fe6d",
+      "bytes": 5442,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/S2-P3-AST-ANALYSIS-2026-09-28.md",
+      "git_blob": "85a6254d969e7721575c6463db551c7d5aec7cc6",
+      "sha256": "7dbfe305de7992edb3d4383b316c8a565655d3fd7a32aca1de212adcaf978e15",
+      "bytes": 5162,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/S2-P3-CONTRACT-ANALYSIS-2026-09-28.md",
+      "git_blob": "8bd9bf53a9ceb8b1c4b574d4b0c23d47aadef874",
+      "sha256": "dbfa5cb053877579bbc2f192a7dddc80954c3322df28c194e30dbcfce6f87469",
+      "bytes": 2163,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/S2-P3-PRECONDITIONS-2026-09-28.md",
+      "git_blob": "97c004b7bbbebe0b91cac0fd7856dc3123eaa118",
+      "sha256": "6972fcc21eada29cbf0fac0484a3477eda904ddda7f7835d700a476ade3f90f4",
+      "bytes": 2719,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/S2-ROW357-P2-AUDIT-2026-09-28.md",
+      "git_blob": "82b7715948fb45444a4d2f2886625bde7ec4a064",
+      "sha256": "c56eb0984911aff9f7b204c348800420f83a3a7b9453144ed1e9459e57805328",
+      "bytes": 5679,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/S2-ROW357-TEACHER-DISCUSSION-2026-09-28.md",
+      "git_blob": "91d3dce6b28ebbfaa97e36a41a14e0c51a2379d5",
+      "sha256": "6707360a0ac10f3d3e5f737274f3d4f578c787d79654c5b9c4b10ce032689b81",
+      "bytes": 9131,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/S2-ROW4938-COMPARISON-2026-09-30.md",
+      "git_blob": "dbd1d46671d7d909fd05dcc6b025c3dd18276272",
+      "sha256": "561b2f4f8c26e930753fe3013a7f813daf5e120debbdfc0a4e54936e24e4283d",
+      "bytes": 3392,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/S2-ROW4938-PLATFORM-2026-09-30.md",
+      "git_blob": "e1dd00754b8e682a79111ef5b3769c14a82b47e3",
+      "sha256": "b6bac5fe2dd0135a880bd2776326b6186bc46a1b23bc08240bbb57116c89b58c",
+      "bytes": 4601,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/S2-ROW4938-RESIDUAL-2026-09-30.md",
+      "git_blob": "c5592ebe8a290d339e5405eb4acbe430b5bef909",
+      "sha256": "40b7ac34500735a22d802ea6574f41a6209c8a938d75b4c94299efa96a5a7cdf",
+      "bytes": 3151,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/S2-SENDER-EXTRACTION-2026-09-28.md",
+      "git_blob": "5a53f786cf898dd0889bf6b179fcf8d3e7d61658",
+      "sha256": "89a05e7219f1cd11ad726771d999d074925face05b0ba7362fc1395ad4a244b2",
+      "bytes": 3164,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/S2-SUVOROV-BACKGROUND-2026-09-30.md",
+      "git_blob": "e0afd60f4c293aff4886163f5b5c1965e40415b7",
+      "sha256": "d210136b5ff8224583d2a358afe154ad0fa3efba3befb13a78eb6cf720d6cd5f",
+      "bytes": 4164,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/S2-WAIT-RESOURCE-2026-09-28.md",
+      "git_blob": "b84878f3e9e6d32388a5dc8dd7600b0add9d46df",
+      "sha256": "c0a57b3961a9ef49ca784c7395d4223b7cc9fef330c4aa57b3e45d149ae3e4aa",
+      "bytes": 3133,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/S2-WAIT-TIMING-2026-09-28.md",
+      "git_blob": "6adf9f27b43b634b66bcadeb53f27ee08e651622",
+      "sha256": "9daf5b9166632116b7c59a11446e0ca3e41ee400f8cef262704210f1046faa5f",
+      "bytes": 4537,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/docs/SOURCE-SKIP-2026-09-28.md",
+      "git_blob": "b0ffc00eff6d32cd30e2c79f6ad26c79619cd421",
+      "sha256": "dad2c8848fd24816c0cdcb1358241789bea54237977931e6a9de30e0a24b17a0",
+      "bytes": 4338,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/main/kotlin/src/org/jetbrains/research/lockrepair/classification/Q1ExpensiveWorkRelocationClassifier.kt",
+      "git_blob": "c69d65e2796d377a9e6dc22b8a36f3c01d50e910",
+      "sha256": "34380335cd1476981ebf6498f7ef5d27b565a270f7dc32190ede63fa264be5be",
+      "bytes": 17554,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/main/kotlin/src/org/jetbrains/research/lockrepair/classification/Q2SynchronousWaitControlClassifier.kt",
+      "git_blob": "9677a4fbae0e6a85450286c42379fee661c189c6",
+      "sha256": "e6ac760c9c7e9d85df875b270a781416f13db077a0f191168f1c3305e0390441",
+      "bytes": 8606,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/main/kotlin/src/org/jetbrains/research/lockrepair/classification/Q3CooperativeCancellationClassifier.kt",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/main/kotlin/src/org/jetbrains/research/lockrepair/classification/Q4LockContentionReductionClassifier.kt",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/main/kotlin/src/org/jetbrains/research/lockrepair/classification/Q5RedundantWorkEliminationClassifier.kt",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/main/kotlin/src/pool/s1_expensive_work/.gitkeep",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "origin": "preserved target"
+    },
+    {
+      "path": "repair/main/kotlin/src/pool/s1_expensive_work/extract_method.kt",
+      "git_blob": "dab219c2812faed0196b01d82d652f16bef3471f",
+      "sha256": "daa6c648b598a22e5c69ea0ed80aa85e1e0d1a807ab29cdafed37d5316881f78",
+      "bytes": 4466,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/main/kotlin/src/pool/s1_expensive_work/P1ClassLoadingPreload.kt",
+      "git_blob": "e2affe5a1109692a168c59d373882056376f3287",
+      "sha256": "e4018d554387c4c9a0c60d138f37d9a54daec6bfce3b0409bd41fd024030ad94",
+      "bytes": 14455,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/main/kotlin/src/pool/s1_expensive_work/P1PreloadBeforeCriticalRegion.kt",
+      "git_blob": "6e63950bac94892d371615e6272051ddd4f999cd",
+      "sha256": "d3759dd2721250b4911902aee3ee726f9ef2b1e01ad7557fefb654318d684a66",
+      "bytes": 21162,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/main/kotlin/src/pool/s1_expensive_work/P1RegexPrecompilation.kt",
+      "git_blob": "5e039c6f85e23b21c517eab197c4a2838ad4bacb",
+      "sha256": "d40d750cf777dabc385cfb66310929d39dfd6438ae70f26c46251eb26f1238c5",
+      "bytes": 5523,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/main/kotlin/src/pool/s1_expensive_work/P1StorageRelocation.kt",
+      "git_blob": "9b26e8ca4d6665a8f40a9708648143d685efafa1",
+      "sha256": "6ca345bf1ee272282449b5dde63aa5e9508aa072af8c21df0945d57e51ca0a88",
+      "bytes": 7064,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/main/kotlin/src/pool/s1_expensive_work/P2ExpensiveWorkRelocation.kt",
+      "git_blob": "f22a4661588c0a7d3b72a9e58ccd2ae376ab6319",
+      "sha256": "fabed20452abd2d35e3364f2ddc39719ab4becb6a547e60c5ad1f384db90d790",
+      "bytes": 7385,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/main/kotlin/src/pool/s1_expensive_work/P3DeferExpensiveOperation.kt",
+      "git_blob": "2c1ac587e531e8ca98de69539b9fdf065ac43744",
+      "sha256": "014555d1e9d10e83fc46c8b46aa647d3eb6f36a969d13fb6007841ee08fc7572",
+      "bytes": 2400,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/main/kotlin/src/pool/s1_expensive_work/RelocationPreconditions.kt",
+      "git_blob": "2f5e6b5a22d89a3d6d98d1392d169f6e82702212",
+      "sha256": "8865f745bdaa98e3b4977e0f986b91e7f18280294a67214a0e4ee9c7882eda72",
+      "bytes": 23057,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/main/kotlin/src/pool/s1_expensive_work/repair_selection.kt",
+      "git_blob": "deaa3fd1f5eabbfa90f885aae6fff436b6aafc04",
+      "sha256": "09358cc6255339871d2b2c49cc82079d46cc61180fc9cb186d369901c61e320c",
+      "bytes": 15762,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/main/kotlin/src/pool/s2_sync_wait/.gitkeep",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "origin": "preserved target"
+    },
+    {
+      "path": "repair/main/kotlin/src/pool/s2_sync_wait/AwaitWithCheckCanceledRepair.kt",
+      "git_blob": "5ffd47855fa7ad3ba9c06c4bf254a4424845128c",
+      "sha256": "21c2024edd6e6b18b2692b78a74dda64a1b114ad9597a0b45d4ed5a5c0edb692",
+      "bytes": 2313,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/main/kotlin/src/pool/s2_sync_wait/extract_method_S2.kt",
+      "git_blob": "3422069ca76826d48f79bdb78c091eca7a0144de",
+      "sha256": "b50a1d0ea43812a0041b7b119fe5c3a98027b18e317b6e52a903a5431e642009",
+      "bytes": 8857,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/main/kotlin/src/pool/s2_sync_wait/MonitorCycleRepair.kt",
+      "git_blob": "e005f3a07a9169bb110cfa5305c12fef189efc8b",
+      "sha256": "77592b0087f756e0633e1e0615e546fdd8907fecdff2a153a125e3f59b227c33",
+      "bytes": 4115,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/main/kotlin/src/pool/s2_sync_wait/P3PreconditionAnalyzer.kt",
+      "git_blob": "2bd4e5b2b2f88468b88c7937bce4e306964ae759",
+      "sha256": "95a8fd39620359fa8f402e4759aa770d3311bf14c44b5c2664722b79b8f4f71a",
+      "bytes": 14681,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/main/kotlin/src/pool/s2_sync_wait/repair_selection_S2.kt",
+      "git_blob": "327078fd0a3c8ae6f21e7309e2a83c4ea3069c8c",
+      "sha256": "e51b79832c1a3d071a4157e5c32d07f13a996be803e04db0b8083355019969b4",
+      "bytes": 10441,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/main/kotlin/src/pool/s2_sync_wait/S2WaitTimingExperiment.kt",
+      "git_blob": "210f822e9900af7035fa753a7b104350d239aebc",
+      "sha256": "5c01494f96b4301864fd3550e61f48de4b57932c0069613998fe4cab6c0af3b7",
+      "bytes": 2644,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/main/kotlin/src/pool/s2_sync_wait/WaitResourceEvidence.kt",
+      "git_blob": "82c524c87a600fd054618e05ae10508f447a654f",
+      "sha256": "fea5877ee6cda7a380fc7c1b4c6a20ebabb6a487d3ad77ee9ca5f007469263b1",
+      "bytes": 5439,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/main/kotlin/src/pool/s3_cancellation/.gitkeep",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "origin": "preserved target"
+    },
+    {
+      "path": "repair/main/kotlin/src/pool/s4_critical_section/.gitkeep",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "origin": "preserved target"
+    },
+    {
+      "path": "repair/main/kotlin/src/pool/s5_redundant_work/.gitkeep",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "origin": "preserved target"
+    },
+    {
+      "path": "repair/main/python/repair.py",
+      "git_blob": "d442ad9457ac6671d7b51e1e0ee7b7cf07d438d7",
+      "sha256": "da756b8767702530c5a93b47669800f72ca1929bbab4d616e81597c00d431ec8",
+      "bytes": 16057,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/main/scripts/build-q1.ps1",
+      "git_blob": "3a69f0dec171c1fd2f07a61a4aca063c81057c21",
+      "sha256": "c2f4822fad42fa382bab473b02d784a586391ee25d82d470c34ad78f54a6ff71",
+      "bytes": 4134,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/main/scripts/build-s1.ps1",
+      "git_blob": "578793919a272a9c6c72a6d021cadec73940d0ed",
+      "sha256": "517aa3c048650bc1a3d00b8140b26f77ef34607820057554348f0299168d122b",
+      "bytes": 2160,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/main/scripts/measure_s2_native_query.py",
+      "git_blob": "facee585cd4ec73015d06f8b4d53d96d2b301071",
+      "sha256": "cbf9542dba6e30dfe005d2783f6ca6a83ad716e07ec271a8fd3aa6df04814aa4",
+      "bytes": 3375,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/README.md",
+      "git_blob": "e78a12c06a6f80f968b1c9461f6b749e8a485e09",
+      "sha256": "cb28d31cfd7f82dabfc3cb756360b307a600bf8593728ab2eec91223dd2c6d66",
+      "bytes": 22662,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/tests/fixtures/lsp4intellij/IntellijLanguageClient.java",
+      "git_blob": "e329494de765618923a1de8787ac8204df7ae36f",
+      "sha256": "55a9574465d9e165f0800bc1604f25d2d89930c80a31adc73062de821326bde3",
+      "bytes": 18443,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/tests/fixtures/lsp4intellij/source-provenance.json",
+      "git_blob": "024fb40f8a79ffc03566ed7643a52896c449bb5b",
+      "sha256": "04c6afc61e94e2b4f039e37f7cf742b712844368520d91061db8f23032498c03",
+      "bytes": 867,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/tests/fixtures/P1-git-loading/P1-finder.jsonl",
+      "git_blob": "8635172c9d40ca6e51a4a4db77f3bf52b1b9f4a7",
+      "sha256": "2fd772662d42ff518b116264e6c55b62ca080788d92739f93630f013f8a77177",
+      "bytes": 72011,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/tests/fixtures/P1-git-loading/P1-source.zip",
+      "git_blob": "5a2092de404c6e9d2c4d97ef63866320342573c8",
+      "sha256": "2e14d76c9223b0878971b0a0ad3cccb8af7b26ae61cb0d8bbe28f3eff4d36414",
+      "bytes": 6246,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/tests/fixtures/P1-notification-loading/P1-finder.jsonl",
+      "git_blob": "9b58a5382937eb40cd4568119a73554e4e591f67",
+      "sha256": "d8e5802651f71c8afe216d44ec0c915a2e117076a832e9957e7fe8f969548066",
+      "bytes": 68448,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/tests/fixtures/P1-notification-loading/P1-source.zip",
+      "git_blob": "7e3869981aad119146de81874f875cc0fad4a683",
+      "sha256": "713ba228630c68f3d49ba668b068147e6d845b6b70fc2a258012ff74170658c2",
+      "bytes": 9062,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/tests/fixtures/P1-preload-bindings/P1-finder.jsonl",
+      "git_blob": "520334c999685d081d365a1726c9eb3deff77589",
+      "sha256": "190028373a7df91a1ea4f9502f5eb0958824360dfb51f416b30d7a64e8c4b3fb",
+      "bytes": 1009912,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/tests/fixtures/P1-preload-bindings/P1-provenance.json",
+      "git_blob": "49f8b291c7d6be732b839aa0dbbb2f25d3ae5d02",
+      "sha256": "d6e93b530a37bcb6aa6b2f4f920d63bf12671b3f24647b8910c0bb6bc3db8f61",
+      "bytes": 2094,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/tests/fixtures/P1-preload-bindings/P1-reviewed-sources.zip",
+      "git_blob": "ef0667297142b288c8729eb27b2b601330f1cc93",
+      "sha256": "d6d55d40bf066742d9b32d1d982e253befcb281587d68e52799512f47d00e727",
+      "bytes": 79225,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/tests/fixtures/q1-method-baseline.json",
+      "git_blob": "f49170e5d1b93e1fd3d8b0b8e420aee4e91cf9d5",
+      "sha256": "5ae51139cd168cb38a2923a619713cabd514d94ff7398265b2542990c097b0d8",
+      "bytes": 11396,
+      "origin": "preserved target"
+    },
+    {
+      "path": "repair/tests/fixtures/q13/finder.jsonl",
+      "git_blob": "e13ffda41b26bf7367e03570b02e6f709c703726",
+      "sha256": "523394cea8f4e2385a8a8f30df54169712b4166e6bbd0c35cb5a77e408a5a702",
+      "bytes": 1310042,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/tests/fixtures/q13/provenance.json",
+      "git_blob": "33704ebaf00fcd6aaaadd8ec06cfa2f36dbb0cd4",
+      "sha256": "2de577e36c1884f13d265c6d48ad2f3dce68ad4ccf0c5e9793dda21169419026",
+      "bytes": 1941,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/tests/fixtures/q13/reviewed-sources.zip",
+      "git_blob": "7cb91dffd1d0e7671011bc40faf0f9a04f213388",
+      "sha256": "c530b59d228f3bf1d1531ca4391cee799ec85383875b969a8e114298271a325f",
+      "bytes": 101142,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/tests/fixtures/row1238-finder.json",
+      "git_blob": "ededd703f184c7ceda51dbef7fed452e803e42b2",
+      "sha256": "a1912f61045efb465ab9246b32da31dea841b058c113939f5986a7c481f9f65e",
+      "bytes": 62328,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/tests/fixtures/row4238-finder.json",
+      "git_blob": "a3e76697c7106deeeff9a4459f991e21dca13c04",
+      "sha256": "c7d175788ace2340b7d58880fa737e75406b2d9c10936d25e261b8143597c012",
+      "bytes": 224117,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/tests/fixtures/row4746-finder.json",
+      "git_blob": "1f5713988016a31d9f0471133ca6ea3f93651a31",
+      "sha256": "83b35ab75ba11ff5a34062bf3476113f49ed953c8496f5debde2a1ff21004a90",
+      "bytes": 203752,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/tests/kotlin/Row4938DeletionExperiment.kt",
+      "git_blob": "ef3bfc9674dca81b37493bcb68825cb9757a8a51",
+      "sha256": "e969fcf00127b3ce638bae2b494dc6c67774228c542d40d5fb586b4e3a3613ca",
+      "bytes": 5526,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/tests/P1_git_loading_test.py",
+      "git_blob": "a07b728f253a7240dcf855f54c275c4f4c8a9a87",
+      "sha256": "6f4349c1501f343b2899ea467873ad38f2c1d67fae295e67c18329d547240bc6",
+      "bytes": 7595,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/tests/P1_loading_candidate_test.py",
+      "git_blob": "e09d6e360d094604a7420a64e86f5a11671f3f6b",
+      "sha256": "4eef0870c9d13fc42f771dddd8f7b9cd752e104a8064ff940e07ddbd1be0e2d2",
+      "bytes": 8005,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/tests/P1_notification_loading_test.py",
+      "git_blob": "1e43b76845996c6d0d981ae10781ff40b178342c",
+      "sha256": "f014ac604c098f46caa59a50a0860ffcf7fbbfa395b50aa673fa7c6a7172b09f",
+      "bytes": 8592,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/tests/P1_preload_bindings_test.py",
+      "git_blob": "cd2aa7217b71d158a76f21dca6dd5770c0625321",
+      "sha256": "2d2c7bf8bcb83b0d2649e1c3360a0c9acbcc1652d5de9dccbcf4bc76b62f625d",
+      "bytes": 6382,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/tests/README.md",
+      "git_blob": "0d612508390e32062e5b59c022f4e9eb76b60b27",
+      "sha256": "827bf0c85270c38ddc199cd6669612f93abfe881730c8295f5af75065217635f",
+      "bytes": 1740,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/tests/test_extract_method.py",
+      "git_blob": "222024f157909e4c85f504ebf0d220b46b4aebcd",
+      "sha256": "723b905355250164f5ca315f8cfa9586156d27b747df0a5829095613d248b064",
+      "bytes": 3497,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/tests/test_monitor_cycle_repair.py",
+      "git_blob": "9c7407597954a6e107febe9c0acfcec22e262809",
+      "sha256": "d03889a9c11642ce9496bb73bf7b8de8b09705443c696db4a819a0f4582e9d53",
+      "bytes": 2523,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/tests/test_p1_effectiveness.py",
+      "git_blob": "59c357b1b8a99870aa8b41041d23be16f5447289",
+      "sha256": "7f45311eafdf6de83af3722fa171e2611abadd406e72dfd4b59fdf0bf177ddcb",
+      "bytes": 7216,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/tests/test_p1_plan.py",
+      "git_blob": "cec3e2b9c23859198136e5df86de575d8d5abef5",
+      "sha256": "c3f872cd4f921f38dde17bea4ed92d9ce47c856d6c40eb220ad500f77b251318",
+      "bytes": 2556,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/tests/test_p1_reload.py",
+      "git_blob": "01d6f1dba7ac5ad04d4b9a17c9fbb3d5e19a644b",
+      "sha256": "66634eb35dd4fd1efc5ce42f5516929afb940a30afbdddfe012d31b1ded79c22",
+      "bytes": 19558,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/tests/test_p2_relocation.py",
+      "git_blob": "c2cb2b6a79da6fa0d89d602ea713d931022432e9",
+      "sha256": "c01d22bc1a22500b6f01555a48fd1c325575734071c87d1bacf13951bd4fc4f0",
+      "bytes": 8421,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/tests/test_p3_analysis.py",
+      "git_blob": "bf951a69a7bbe20c3a5388697ff1c861b869b70d",
+      "sha256": "71ae8c76e879abc6ef075bd5a1b6994a2baa7a869dcc0c3899edd0546be54a1c",
+      "bytes": 4688,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/tests/test_q13_relocation.py",
+      "git_blob": "10705b2c4720eb603befe036f4f08e58091662f5",
+      "sha256": "a9a67bdb8b4e5c6d11b40706dc93321b244e3435fc6a1473656bb338a972cec1",
+      "bytes": 11538,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/tests/test_q2_classifier.py",
+      "git_blob": "2dbb63f67d8975598af0874b58688f7bede038b1",
+      "sha256": "02e31a0c817a264201f71a4d4271d4f5a0e7a9d883d791bff1993e189ad3fb5c",
+      "bytes": 13878,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/tests/test_regex_precompilation.py",
+      "git_blob": "c7b38280fa9630cd003dc82e6f261752be67ddaf",
+      "sha256": "88e999531aaac849ea2611ee3a9ad32c85f8580185fc42ce2910155279fda802",
+      "bytes": 8619,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/tests/test_repair_entry.py",
+      "git_blob": "b2d2095e8e0fa1666aeeef1215b48249b63335ea",
+      "sha256": "1dbe169593dd372b692f44c36cea13c364a37110870d9e478c9767b7dccfa675",
+      "bytes": 10963,
+      "origin": "standalone publication adaptation",
+      "original_git_blob": "359c4f9b1bf69ebf7d643a57c312cc9305c91023"
+    },
+    {
+      "path": "repair/tests/test_repair_selection.py",
+      "git_blob": "8b21beaca5cc61ceee279edef872ea39c541f299",
+      "sha256": "996fc65f8880ccb45a9f479c6754d770cc05f3af48c6ab7584bb74385a4f2961",
+      "bytes": 18213,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "repair/tests/test_wait_resource_evidence.py",
+      "git_blob": "fc17a7e4066715096e37b72f5f676e6503d20d1f",
+      "sha256": "d2f4ad7c48305cddd48d4e8a48b76b5580632d9ac85c420d3b83d084407ac5ff",
+      "bytes": 5948,
+      "origin": "local checkpoint"
+    },
+    {
+      "path": "run_publication_checks.py",
+      "git_blob": "39904c0802a01d7dfce863e11f19fa118cbf9810",
+      "sha256": "c3fa75b07bd31b2a3b01ef02f373f61f6f3545681ead0ecdbb9054f134549a41",
+      "bytes": 1360,
+      "origin": "standalone publication adaptation",
+      "original_git_blob": "39904c0802a01d7dfce863e11f19fa118cbf9810"
+    }
+  ],
+  "exclusions": [
+    "raw workbook",
+    "generated out/",
+    "untracked raw datasets",
+    "legacy pipelines and backups",
+    "IntelliJ production checkout"
+  ],
+  "repair_test_patterns": [
+    "test_repair_entry.py",
+    "test_q2_classifier.py",
+    "test_extract_method.py",
+    "test_p3_analysis.py",
+    "test_wait_resource_evidence.py",
+    "test_monitor_cycle_repair.py",
+    "test_repair_selection.py",
+    "test_p1_plan.py",
+    "test_p1_reload.py",
+    "test_regex_precompilation.py",
+    "test_p2_relocation.py",
+    "test_q13_relocation.py"
+  ],
+  "export_adaptations": {
+    "repair/tests/test_repair_entry.py": "Retain target-repository 75-method fixture instead of untracked raw rows",
+    "README.md": "Updated standalone instructions and verification boundaries",
+    "PROGRESS.md": "Compact publication status with one active residual investigation",
+    "PUBLICATION-2026-10-01.md": "Review and exact fresh validation record",
+    "run_publication_checks.py": "Selected portable checks, rejects skipped integrations"
+  }
+}

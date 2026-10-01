@@ -25,8 +25,23 @@ $deps = ($artifacts | ForEach-Object { Join-Path $OutputDirectory ($_.Split('/')
 $source = Join-Path $PSScriptRoot '../kotlin/src/org/jetbrains/research/lockrepair/classification/Q1ExpensiveWorkRelocationClassifier.kt'
 $jar = Join-Path $OutputDirectory 'q1.jar'
 $q2Source = Join-Path $PSScriptRoot '../kotlin/src/org/jetbrains/research/lockrepair/classification/Q2SynchronousWaitControlClassifier.kt'
-& $Java -cp $deps org.jetbrains.kotlin.cli.jvm.K2JVMCompiler -no-stdlib -no-reflect -classpath $deps -d $jar $source $q2Source
+$extractSource = Join-Path $PSScriptRoot '../kotlin/src/pool/s1_expensive_work/extract_method.kt'
+$p2Source = Join-Path $PSScriptRoot '../kotlin/src/pool/s1_expensive_work/P2ExpensiveWorkRelocation.kt'
+$selectionSource = Join-Path $PSScriptRoot '../kotlin/src/pool/s1_expensive_work/repair_selection.kt'
+$preconditionsSource = Join-Path $PSScriptRoot '../kotlin/src/pool/s1_expensive_work/RelocationPreconditions.kt'
+$p1Source = Join-Path $PSScriptRoot '../kotlin/src/pool/s1_expensive_work/P1PreloadBeforeCriticalRegion.kt'
+$p3Source = Join-Path $PSScriptRoot '../kotlin/src/pool/s1_expensive_work/P3DeferExpensiveOperation.kt'
+$regexSource = Join-Path $PSScriptRoot '../kotlin/src/pool/s1_expensive_work/P1RegexPrecompilation.kt'
+$q13Source = Join-Path $PSScriptRoot '../kotlin/src/pool/s1_expensive_work/P1StorageRelocation.kt'
+$loadingSource = Join-Path $PSScriptRoot '../kotlin/src/pool/s1_expensive_work/P1ClassLoadingPreload.kt'
+$s2ExtractSource = Join-Path $PSScriptRoot '../kotlin/src/pool/s2_sync_wait/extract_method_S2.kt'
+$s2SelectionSource = Join-Path $PSScriptRoot '../kotlin/src/pool/s2_sync_wait/repair_selection_S2.kt'
+$s2AwaitSource = Join-Path $PSScriptRoot '../kotlin/src/pool/s2_sync_wait/AwaitWithCheckCanceledRepair.kt'
+$s2AnalyzerSource = Join-Path $PSScriptRoot '../kotlin/src/pool/s2_sync_wait/P3PreconditionAnalyzer.kt'
+$s2ResourceSource = Join-Path $PSScriptRoot '../kotlin/src/pool/s2_sync_wait/WaitResourceEvidence.kt'
+$s2CycleSource = Join-Path $PSScriptRoot '../kotlin/src/pool/s2_sync_wait/MonitorCycleRepair.kt'
+& $Java -cp $deps org.jetbrains.kotlin.cli.jvm.K2JVMCompiler -no-stdlib -no-reflect -classpath $deps -d $jar $source $q2Source $extractSource $p2Source $selectionSource $preconditionsSource $p1Source $p3Source $regexSource $q13Source $loadingSource $s2ExtractSource $s2SelectionSource $s2AwaitSource $s2AnalyzerSource $s2ResourceSource $s2CycleSource
 if ($LASTEXITCODE -ne 0) { throw 'Q1 compilation failed' }
-$runtime = @($jar, (Join-Path $OutputDirectory 'kotlin-stdlib-2.1.20.jar'), (Join-Path $OutputDirectory 'gson-2.11.0.jar')) -join [IO.Path]::PathSeparator
+$runtime = @($deps, $jar, (Join-Path $OutputDirectory 'kotlin-stdlib-2.1.20.jar'), (Join-Path $OutputDirectory 'gson-2.11.0.jar')) -join [IO.Path]::PathSeparator
 Set-Content -LiteralPath (Join-Path $OutputDirectory 'classpath.txt') -Value $runtime -Encoding UTF8
 Write-Output $runtime

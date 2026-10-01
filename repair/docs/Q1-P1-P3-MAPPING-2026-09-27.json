@@ -1,0 +1,761 @@
+{
+  "scope": "Method-name-level strategy triage; not source-verified applicability or generator admission rules",
+  "classifier_sha256": "88fbb441f452275459c49c64ea471f2bf034e22e4a25e8fe60f335527fa4fa7d",
+  "counts": {
+    "P2_FIRST": 31,
+    "CONTEXT_FIRST": 23,
+    "P1_FIRST": 21
+  },
+  "methods": [
+    {
+      "symbol": "com.intellij.json.syntax._JsonLexer.advance",
+      "category": "Q1.5",
+      "priority": "P2_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Prefer moving complete lex/parse/tree-building task using task-confined parser state and required PSI/read constraints.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "com.intellij.json.syntax._JsonLexer.codePoint",
+      "category": "Q1.5",
+      "priority": "CONTEXT_FIRST",
+      "p1": "REQUIRES_OWNER_CONTEXT",
+      "p2": "REQUIRES_OWNER_CONTEXT",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Helper/diagnostic/accessor is not a standalone relocation unit; inspect enclosing parse/lex workload.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "com.intellij.lexer.FlexAdapter.locateToken",
+      "category": "Q1.5",
+      "priority": "P2_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Prefer moving complete lex/parse/tree-building task using task-confined parser state and required PSI/read constraints.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "com.intellij.lexer.MergingLexerAdapter$MyMergeFunction.merge",
+      "category": "Q1.5",
+      "priority": "P2_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Prefer moving complete lex/parse/tree-building task using task-confined parser state and required PSI/read constraints.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "com.intellij.openapi.vfs.newvfs.persistent.DefaultInMemoryInvertedNameIndex.deleteDataInner",
+      "category": "Q1.3",
+      "priority": "CONTEXT_FIRST",
+      "p1": "REQUIRES_OWNER_CONTEXT",
+      "p2": "REQUIRES_OWNER_CONTEXT",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Inspect whether this is mutation, lazy maintenance, ownership acquisition or a cheap accessor before choosing relocation scope.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "com.intellij.openapi.vfs.newvfs.persistent.FSRecordsImpl.getName",
+      "category": "Q1.3",
+      "priority": "P1_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Prepare query result/snapshot under required read constraints; verify invalidation and consistency.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "com.intellij.openapi.vfs.newvfs.persistent.FSRecordsImpl.getNameByNameId",
+      "category": "Q1.3",
+      "priority": "P1_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Prepare query result/snapshot under required read constraints; verify invalidation and consistency.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "com.intellij.openapi.vfs.newvfs.persistent.FSRecordsImpl.readAttribute",
+      "category": "Q1.3",
+      "priority": "P1_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Prepare query result/snapshot under required read constraints; verify invalidation and consistency.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "com.intellij.openapi.vfs.newvfs.persistent.FSRecordsImpl.readSymlinkTarget",
+      "category": "Q1.3",
+      "priority": "P1_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Prepare query result/snapshot under required read constraints; verify invalidation and consistency.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "com.intellij.openapi.vfs.newvfs.persistent.FSRecordsImpl.update",
+      "category": "Q1.3",
+      "priority": "CONTEXT_FIRST",
+      "p1": "REQUIRES_OWNER_CONTEXT",
+      "p2": "REQUIRES_OWNER_CONTEXT",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Inspect whether this is mutation, lazy maintenance, ownership acquisition or a cheap accessor before choosing relocation scope.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "com.intellij.openapi.vfs.newvfs.persistent.FSRecordsImpl.updateSymlinksForNewChildren",
+      "category": "Q1.3",
+      "priority": "CONTEXT_FIRST",
+      "p1": "REQUIRES_OWNER_CONTEXT",
+      "p2": "REQUIRES_OWNER_CONTEXT",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Inspect whether this is mutation, lazy maintenance, ownership acquisition or a cheap accessor before choosing relocation scope.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "com.intellij.openapi.vfs.newvfs.persistent.PersistentFSContentAccessor.acquireContentRecord",
+      "category": "Q1.3",
+      "priority": "CONTEXT_FIRST",
+      "p1": "REQUIRES_OWNER_CONTEXT",
+      "p2": "REQUIRES_OWNER_CONTEXT",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Inspect whether this is mutation, lazy maintenance, ownership acquisition or a cheap accessor before choosing relocation scope.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "com.intellij.platform.syntax.impl.builder.MarkerProduction.addMarker",
+      "category": "Q1.5",
+      "priority": "P2_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Prefer moving complete lex/parse/tree-building task using task-confined parser state and required PSI/read constraints.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "com.intellij.platform.syntax.impl.builder.MarkerProduction.findLinearly",
+      "category": "Q1.5",
+      "priority": "P2_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Prefer moving complete lex/parse/tree-building task using task-confined parser state and required PSI/read constraints.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "com.intellij.platform.syntax.impl.builder.MarkerProduction.findMarkerAtLexeme",
+      "category": "Q1.5",
+      "priority": "P2_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Prefer moving complete lex/parse/tree-building task using task-confined parser state and required PSI/read constraints.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "com.intellij.platform.syntax.impl.builder.SyntaxTreeBuilderImpl$WhitespaceBalancer.balanceMarkerAndReturnNewIndex",
+      "category": "Q1.5",
+      "priority": "P2_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Prefer moving complete lex/parse/tree-building task using task-confined parser state and required PSI/read constraints.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "com.intellij.platform.syntax.impl.builder.SyntaxTreeBuilderImpl.remapCurrentToken",
+      "category": "Q1.5",
+      "priority": "P2_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Prefer moving complete lex/parse/tree-building task using task-confined parser state and required PSI/read constraints.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "com.intellij.platform.syntax.impl.builder.SyntaxTreeBuilderImpl.rollbackTo$intellij_platform_syntax",
+      "category": "Q1.5",
+      "priority": "P2_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Prefer moving complete lex/parse/tree-building task using task-confined parser state and required PSI/read constraints.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "com.intellij.platform.syntax.lexer.Builder.performLexing",
+      "category": "Q1.5",
+      "priority": "P2_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Prefer moving complete lex/parse/tree-building task using task-confined parser state and required PSI/read constraints.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "com.intellij.platform.syntax.psi.ParsingDiagnostics.registerLexing",
+      "category": "Q1.5",
+      "priority": "CONTEXT_FIRST",
+      "p1": "REQUIRES_OWNER_CONTEXT",
+      "p2": "REQUIRES_OWNER_CONTEXT",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Helper/diagnostic/accessor is not a standalone relocation unit; inspect enclosing parse/lex workload.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "com.intellij.platform.syntax.psi.impl.NodeData.createLeaf",
+      "category": "Q1.5",
+      "priority": "P2_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Prefer moving complete lex/parse/tree-building task using task-confined parser state and required PSI/read constraints.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "com.intellij.platform.syntax.psi.impl.NodeData.getInternedText",
+      "category": "Q1.5",
+      "priority": "CONTEXT_FIRST",
+      "p1": "REQUIRES_OWNER_CONTEXT",
+      "p2": "REQUIRES_OWNER_CONTEXT",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Helper/diagnostic/accessor is not a standalone relocation unit; inspect enclosing parse/lex workload.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "com.intellij.platform.syntax.psi.impl.NodeData.insertLeaves",
+      "category": "Q1.5",
+      "priority": "P2_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Prefer moving complete lex/parse/tree-building task using task-confined parser state and required PSI/read constraints.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "com.intellij.platform.syntax.util.runtime.Modifiers.access$get_NONE_$cp",
+      "category": "Q1.5",
+      "priority": "CONTEXT_FIRST",
+      "p1": "REQUIRES_OWNER_CONTEXT",
+      "p2": "REQUIRES_OWNER_CONTEXT",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Helper/diagnostic/accessor is not a standalone relocation unit; inspect enclosing parse/lex workload.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "com.intellij.platform.syntax.util.runtime.impl.MyList.trimSize-impl",
+      "category": "Q1.5",
+      "priority": "CONTEXT_FIRST",
+      "p1": "REQUIRES_OWNER_CONTEXT",
+      "p2": "REQUIRES_OWNER_CONTEXT",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Helper/diagnostic/accessor is not a standalone relocation unit; inspect enclosing parse/lex workload.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "com.intellij.platform.syntax.util.runtime.impl.SyntaxGeneratedParserRuntimeImpl.enter_section_-T529yjc",
+      "category": "Q1.5",
+      "priority": "P2_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Prefer moving complete lex/parse/tree-building task using task-confined parser state and required PSI/read constraints.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "com.intellij.platform.syntax.util.runtime.impl.SyntaxGeneratedParserRuntimeImpl.exit_section_",
+      "category": "Q1.5",
+      "priority": "P2_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Prefer moving complete lex/parse/tree-building task using task-confined parser state and required PSI/read constraints.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "com.intellij.platform.syntax.util.runtime.impl.SyntaxGeneratedParserRuntimeImpl.nextTokenIsSlow",
+      "category": "Q1.5",
+      "priority": "P2_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Prefer moving complete lex/parse/tree-building task using task-confined parser state and required PSI/read constraints.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "com.intellij.textmate.joni.JoniRegexFacade.match-ZRjI0jQ",
+      "category": "Q1.4",
+      "priority": "P2_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Move the enclosing workload with isolated input/state; do not move an internal frame independently.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "com.intellij.ui.svg.SvgCacheManagerKt.createIconCacheKey-2Mr4RHQ",
+      "category": "Q1.7",
+      "priority": "CONTEXT_FIRST",
+      "p1": "REQUIRES_OWNER_CONTEXT",
+      "p2": "REQUIRES_OWNER_CONTEXT",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Inspect owning image load operation; do not independently defer resource cleanup or move a cache-key helper.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "com.intellij.ui.svg.SvgCacheManagerKt.readImage",
+      "category": "Q1.7",
+      "priority": "P2_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Prepare/load/decode image off EDT if API and state allow, then publish UI result; proactive resource preparation may use P1.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "com.intellij.ui.svg.SvgKt.loadSvgAndCacheIfApplicable-F6nGey4",
+      "category": "Q1.7",
+      "priority": "P2_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Prepare/load/decode image off EDT if API and state allow, then publish UI result; proactive resource preparation may use P1.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "com.intellij.util.io.SimpleStringPersistentEnumerator.enumerate",
+      "category": "Q1.3",
+      "priority": "CONTEXT_FIRST",
+      "p1": "REQUIRES_OWNER_CONTEXT",
+      "p2": "REQUIRES_OWNER_CONTEXT",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Inspect whether this is mutation, lazy maintenance, ownership acquisition or a cheap accessor before choosing relocation scope.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "com.intellij.util.lang.UrlClassLoader.findClass",
+      "category": "Q1.2",
+      "priority": "P1_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Consider prewarming via the enclosing feature initialization; check initialization side effects, class-loader locks and EDT requirements.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "com.intellij.workspaceModel.core.fileIndex.impl.ExcludedFileSet$ByFileKind.computeMasks",
+      "category": "Q1.3",
+      "priority": "CONTEXT_FIRST",
+      "p1": "REQUIRES_OWNER_CONTEXT",
+      "p2": "REQUIRES_OWNER_CONTEXT",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Inspect whether this is mutation, lazy maintenance, ownership acquisition or a cheap accessor before choosing relocation scope.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "com.intellij.workspaceModel.core.fileIndex.impl.WorkspaceFileIndexDataImpl.ensureIsUpToDate",
+      "category": "Q1.3",
+      "priority": "CONTEXT_FIRST",
+      "p1": "REQUIRES_OWNER_CONTEXT",
+      "p2": "REQUIRES_OWNER_CONTEXT",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Inspect whether this is mutation, lazy maintenance, ownership acquisition or a cheap accessor before choosing relocation scope.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "com.intellij.workspaceModel.core.fileIndex.impl.WorkspaceFileIndexDataImpl.getFileInfo",
+      "category": "Q1.3",
+      "priority": "P1_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Prepare query result/snapshot under required read constraints; verify invalidation and consistency.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "com.intellij.workspaceModel.core.fileIndex.impl.WorkspaceFileIndexImpl$processContentUnderDirectory$visitor$1.visitFileEx",
+      "category": "Q1.3",
+      "priority": "P2_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Move the enclosing workload with isolated input/state; do not move an internal frame independently.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "com.intellij.workspaceModel.core.fileIndex.impl.WorkspaceFileIndexImpl.getMainIndexData",
+      "category": "Q1.3",
+      "priority": "CONTEXT_FIRST",
+      "p1": "REQUIRES_OWNER_CONTEXT",
+      "p2": "REQUIRES_OWNER_CONTEXT",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Inspect whether this is mutation, lazy maintenance, ownership acquisition or a cheap accessor before choosing relocation scope.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "com.intellij.workspaceModel.core.fileIndex.impl.WorkspaceFileIndexImpl.processContentFilesUnderExcludedDirectory$lambda$0",
+      "category": "Q1.3",
+      "priority": "P2_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Move the enclosing workload with isolated input/state; do not move an internal frame independently.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "com.sun.imageio.plugins.png.PNGImageReader.createRaster",
+      "category": "Q1.7",
+      "priority": "P2_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Prepare/load/decode image off EDT if API and state allow, then publish UI result; proactive resource preparation may use P1.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "com.sun.imageio.plugins.png.PNGImageReader.decodePass",
+      "category": "Q1.7",
+      "priority": "P2_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Prepare/load/decode image off EDT if API and state allow, then publish UI result; proactive resource preparation may use P1.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "java.io.FileOutputStream.writeBytes",
+      "category": "Q1.1",
+      "priority": "CONTEXT_FIRST",
+      "p1": "REQUIRES_OWNER_CONTEXT",
+      "p2": "REQUIRES_OWNER_CONTEXT",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Determine open mode, side effects, ordering and resource lifetime; background whole transaction may be possible.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "java.io.WinNTFileSystem.canonicalize",
+      "category": "Q1.1",
+      "priority": "P1_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Prefetch query result when input is known and validity at consumption can be maintained.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "java.lang.ClassLoader.defineClass",
+      "category": "Q1.2",
+      "priority": "P1_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Consider prewarming via the enclosing feature initialization; check initialization side effects, class-loader locks and EDT requirements.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "java.lang.ClassLoader.defineClass0",
+      "category": "Q1.2",
+      "priority": "P1_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Consider prewarming via the enclosing feature initialization; check initialization side effects, class-loader locks and EDT requirements.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "java.lang.ClassLoader.defineClass2",
+      "category": "Q1.2",
+      "priority": "P1_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Consider prewarming via the enclosing feature initialization; check initialization side effects, class-loader locks and EDT requirements.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "java.lang.ClassLoader.defineClassSourceLocation",
+      "category": "Q1.2",
+      "priority": "P1_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Consider prewarming via the enclosing feature initialization; check initialization side effects, class-loader locks and EDT requirements.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "java.lang.ClassLoader.loadClass",
+      "category": "Q1.2",
+      "priority": "P1_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Consider prewarming via the enclosing feature initialization; check initialization side effects, class-loader locks and EDT requirements.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "java.util.regex.Matcher.match",
+      "category": "Q1.4",
+      "priority": "P2_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Move the enclosing workload with isolated input/state; do not move an internal frame independently.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "java.util.regex.Pattern$BmpCharProperty.match",
+      "category": "Q1.4",
+      "priority": "P2_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Move the enclosing workload with isolated input/state; do not move an internal frame independently.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "java.util.regex.Pattern$SliceNode.study",
+      "category": "Q1.4",
+      "priority": "P1_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Prepare a compiled Pattern for known expressions; never share mutable Matcher or relocate an internal compiler step alone.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "java.util.regex.Pattern$Start.match",
+      "category": "Q1.4",
+      "priority": "P2_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Move the enclosing workload with isolated input/state; do not move an internal frame independently.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "java.util.regex.Pattern.compile",
+      "category": "Q1.4",
+      "priority": "P1_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Prepare a compiled Pattern for known expressions; never share mutable Matcher or relocate an internal compiler step alone.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "java.util.regex.Pattern.expr",
+      "category": "Q1.4",
+      "priority": "P1_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Prepare a compiled Pattern for known expressions; never share mutable Matcher or relocate an internal compiler step alone.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "java.util.zip.Inflater.end",
+      "category": "Q1.6",
+      "priority": "CONTEXT_FIRST",
+      "p1": "REQUIRES_OWNER_CONTEXT",
+      "p2": "REQUIRES_OWNER_CONTEXT",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Cleanup must remain attached to its owning decode/decompression task; row1238 supports P2 for enclosing ImageIO.read only.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "java.util.zip.Inflater.inflateBufferBuffer",
+      "category": "Q1.6",
+      "priority": "P2_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Move the enclosing workload with isolated input/state; do not move an internal frame independently.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "java.util.zip.Inflater.inflateBufferBytes",
+      "category": "Q1.6",
+      "priority": "P2_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Move the enclosing workload with isolated input/state; do not move an internal frame independently.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "javax.imageio.stream.FileCacheImageInputStream$StreamDisposerRecord.dispose",
+      "category": "Q1.7",
+      "priority": "CONTEXT_FIRST",
+      "p1": "REQUIRES_OWNER_CONTEXT",
+      "p2": "REQUIRES_OWNER_CONTEXT",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Inspect owning image load operation; do not independently defer resource cleanup or move a cache-key helper.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "jdk.internal.loader.NativeLibraries.load",
+      "category": "Q1.2",
+      "priority": "P1_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Consider prewarming via the enclosing feature initialization; check initialization side effects, class-loader locks and EDT requirements.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "org.jetbrains.plugins.textmate.regex.CaffeineCachingRegexProvider.withRegex",
+      "category": "Q1.4",
+      "priority": "CONTEXT_FIRST",
+      "p1": "REQUIRES_OWNER_CONTEXT",
+      "p2": "REQUIRES_OWNER_CONTEXT",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Callback/accessor frame alone does not identify the movable work; inspect regex creation/matching caller.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "org.jetbrains.plugins.textmate.regex.TextMateRangeKt.get-Sp08x1s",
+      "category": "Q1.4",
+      "priority": "CONTEXT_FIRST",
+      "p1": "REQUIRES_OWNER_CONTEXT",
+      "p2": "REQUIRES_OWNER_CONTEXT",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Callback/accessor frame alone does not identify the movable work; inspect regex creation/matching caller.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "org.jetbrains.plugins.textmate.regex.TextMateRegexFacadeRememberLastMatch.match-ZRjI0jQ",
+      "category": "Q1.4",
+      "priority": "P2_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Move the enclosing workload with isolated input/state; do not move an internal frame independently.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "sun.nio.ch.FileDispatcherImpl.read0",
+      "category": "Q1.1",
+      "priority": "P2_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Move the enclosing workload with isolated input/state; do not move an internal frame independently.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "sun.nio.fs.WindowsNativeDispatcher.CreateFile0",
+      "category": "Q1.1",
+      "priority": "CONTEXT_FIRST",
+      "p1": "REQUIRES_OWNER_CONTEXT",
+      "p2": "REQUIRES_OWNER_CONTEXT",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Determine open mode, side effects, ordering and resource lifetime; background whole transaction may be possible.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "sun.nio.fs.WindowsNativeDispatcher.DeleteFile0",
+      "category": "Q1.1",
+      "priority": "CONTEXT_FIRST",
+      "p1": "REQUIRES_OWNER_CONTEXT",
+      "p2": "REQUIRES_OWNER_CONTEXT",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Determine open mode, side effects, ordering and resource lifetime; background whole transaction may be possible.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "sun.nio.fs.WindowsNativeDispatcher.FindClose",
+      "category": "Q1.1",
+      "priority": "CONTEXT_FIRST",
+      "p1": "REQUIRES_OWNER_CONTEXT",
+      "p2": "REQUIRES_OWNER_CONTEXT",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Determine open mode, side effects, ordering and resource lifetime; background whole transaction may be possible.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "sun.nio.fs.WindowsNativeDispatcher.FindFirstFile0",
+      "category": "Q1.1",
+      "priority": "P2_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Move the enclosing workload with isolated input/state; do not move an internal frame independently.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "sun.nio.fs.WindowsNativeDispatcher.FindNextFile0",
+      "category": "Q1.1",
+      "priority": "P2_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Move the enclosing workload with isolated input/state; do not move an internal frame independently.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "sun.nio.fs.WindowsNativeDispatcher.GetFileAttributesEx",
+      "category": "Q1.1",
+      "priority": "P1_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Prefetch query result when input is known and validity at consumption can be maintained.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "sun.nio.fs.WindowsNativeDispatcher.GetFileAttributesEx0",
+      "category": "Q1.1",
+      "priority": "P1_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Prefetch query result when input is known and validity at consumption can be maintained.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "sun.nio.fs.WindowsNativeDispatcher.GetFinalPathNameByHandle",
+      "category": "Q1.1",
+      "priority": "P1_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Prefetch query result when input is known and validity at consumption can be maintained.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "sun.nio.fs.WindowsNativeDispatcher.GetFullPathName0",
+      "category": "Q1.1",
+      "priority": "P1_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Prefetch query result when input is known and validity at consumption can be maintained.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "sun.nio.fs.WindowsNativeDispatcher.GetLogicalDrives",
+      "category": "Q1.1",
+      "priority": "P1_FIRST",
+      "p1": "CONDITIONAL_ON_EARLY_KNOWN_INPUT_AND_VALID_RESULT",
+      "p2": "CONDITIONAL_ON_BACKGROUND_SAFE_WORK_AND_ASYNC_CONSUMER",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Prefetch query result when input is known and validity at consumption can be maintained.",
+      "automatic_repair_supported_by_this_mapping": false
+    },
+    {
+      "symbol": "sun.nio.fs.WindowsNativeDispatcher.SetEndOfFile",
+      "category": "Q1.1",
+      "priority": "CONTEXT_FIRST",
+      "p1": "REQUIRES_OWNER_CONTEXT",
+      "p2": "REQUIRES_OWNER_CONTEXT",
+      "p3": "ONLY_IF_ENCLOSING_TASK_IS_NONESSENTIAL_NOW_AND_ORDERING_PRESERVED",
+      "reason": "Determine open mode, side effects, ordering and resource lifetime; background whole transaction may be possible.",
+      "automatic_repair_supported_by_this_mapping": false
+    }
+  ]
+}

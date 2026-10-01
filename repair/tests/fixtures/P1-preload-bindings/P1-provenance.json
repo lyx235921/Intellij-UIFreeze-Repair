@@ -1,0 +1,28 @@
+{
+  "rows": [
+    211,
+    874,
+    888,
+    890,
+    1031,
+    1787,
+    1346,
+    4490,
+    1347
+  ],
+  "source_basis": "LOCAL_CHECKOUT_NOT_INCIDENT_VERSION_PROOF",
+  "files": {
+    "platform/analysis-api/src/com/intellij/openapi/vfs/newvfs/FileNavigator.java": "218ae5a44d84268feb8c11764322c5c0efeb67caeaabd8b0abe6b16b3b7d1e4a",
+    "platform/analysis-api/src/com/intellij/openapi/vfs/newvfs/NewVirtualFileSystem.java": "66964a754106aaf4034b85e5dcbf679ed0e05e68f54017239f87914bea755267",
+    "platform/core-nio-fs/src/com/intellij/platform/core/nio/fs/MultiRoutingFileSystem.java": "db44498879df36ed124378c4857954dabf12cf055befb45e4cdd2b602504660c",
+    "platform/core-nio-fs/src/com/intellij/platform/core/nio/fs/MultiRoutingFsPath.java": "1302e7bf5669d4b2b018d2b0719d80bf03d0c3c8680b0e9cd0fb669ff3801df3",
+    "platform/platform-impl/src/com/intellij/openapi/actionSystem/impl/ActionToolbarImpl.kt": "7fdc78db267f946e33c0c77a89f2c05162e6d34e93b5159e55a68fdc400f7333",
+    "platform/platform-impl/src/com/intellij/openapi/fileEditor/impl/FileEditorManagerImpl.kt": "c673bf2eabf2bcf3b66ac41b6e9ed7e47c037677b1aa734047f8ab2fc81ab96f",
+    "platform/platform-impl/src/com/intellij/openapi/vfs/impl/local/LocalFileSystemBase.java": "af8cb811803beec54106b2f7069e9af6c83190d648bc642b8a2b726857061ac3",
+    "platform/platform-impl/src/com/intellij/openapi/vfs/newvfs/RefreshWorker.java": "94c8c668996b0837e1b9a1d1c2ad0043887408d9fba0d186dfe00797ef311a2a",
+    "platform/platform-impl/src/com/intellij/openapi/wm/impl/ExpandableComboAction.kt": "45c5ca4ace5a774f54cb8ed854eb266fb29a9d40771cc0cb15dcd3ce945c8976",
+    "platform/ui.jcef/jcef/HwFacadeHelper.java": "fba369eff240f5409da99a4316e9e50cfec18b95f88d8212f1d2c247575f0cf1",
+    "plugins/git4idea/frontend/src/com/intellij/vcs/git/frontend/widget/GitToolbarWidgetAction.kt": "f7615ef4e9aaee402f3c661820271828762136a9a4fec45376917fd37b32c5ca",
+    "plugins/terminal/frontend/src/com/intellij/terminal/frontend/fus/TerminalFocusFusService.kt": "ec827ad9a0516c7a18b4f4003f54fdf1642a99a251386e0c07f29136c0897830"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "experiment": "controlled_500ms_preparation_stall",
+  "proposal_sha256": "650021a585f06ed62dd80176c560a4ea8c8b28fd01aaf5e4f8519b51cef5f19f",
+  "java_version": "openjdk version \"25.0.4.1\" 2026-08-18 LTS\nOpenJDK Runtime Environment Temurin-25.0.4.1+1 (build 25.0.4.1+1-LTS)\nOpenJDK 64-Bit Server VM Temurin-25.0.4.1+1 (build 25.0.4.1+1-LTS, mixed mode, sharing)",
+  "runs": {
+    "baseline": [
+      {
+        "heartbeat_ms": 513.279,
+        "completion_ms": 525.361,
+        "responsive_during_stall": false,
+        "result_valid": true
+      },
+      {
+        "heartbeat_ms": 501.547,
+        "completion_ms": 507.412,
+        "responsive_during_stall": false,
+        "result_valid": true
+      },
+      {
+        "heartbeat_ms": 504.409,
+        "completion_ms": 512.916,
+        "responsive_during_stall": false,
+        "result_valid": true
+      }
+    ],
+    "patched": [
+      {
+        "heartbeat_ms": 1.655,
+        "completion_ms": 519.081,
+        "responsive_during_stall": true,
+        "result_valid": true
+      },
+      {
+        "heartbeat_ms": 1.906,
+        "completion_ms": 516.984,
+        "responsive_during_stall": true,
+        "result_valid": true
+      },
+      {
+        "heartbeat_ms": 1.623,
+        "completion_ms": 519.261,
+        "responsive_during_stall": true,
+        "result_valid": true
+      }
+    ]
+  },
+  "checks_passed": true,
+  "limitations": [
+    "Synthetic 2x2 PNG; ICO encoding, window and native taskbar operations are test substitutes",
+    "ImageIO disk cache disabled only in harness",
+    "No production patch applied or original IDE freeze reproduced",
+    "Shows EDT responsiveness under controlled delay, not original incident speedup"
+  ]
+}

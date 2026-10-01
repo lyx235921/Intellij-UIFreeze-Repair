@@ -7,6 +7,35 @@ Q1尚不分类；输出额外含record_id、workbook_sha256、input、parse、so
 
 # Repair
 
+S1 专用方法提取与修复选择位于 `main/kotlin/src/pool/s1_expensive_work/extract_method.kt` 和 `repair_selection.kt`，包名均为 `org.jetbrains.research.lockrepair.pool.s1`。CLI 参数保持不变。
+
+## 缺失业务／插件源码时继续处理（2026-09-28）
+
+`--repair-selection` 对每个命中分别处理：已有受验证模板候选正常返回；没有候选且五层上下文中
+Finder 明确报告 `SOURCE_FILE_NOT_FOUND` 时返回 `SKIPPED_SOURCE_UNAVAILABLE`，继续同一行其他命中及后续行。
+保留 `missing_source_contexts`（方法、文件和定位原因），不按插件包名屏蔽，不把缺源码视为 P1/P2 失败而启动 P3。
+源码存在但方法未找到、定位歧义、哈希不符或栈缺帧仍保留原诊断，不自动认定插件缺失。
+补入源码后重新运行 Finder 再进入 Repair；旧 Finder 输出的缺失结论不会自动刷新。
+stderr 的 `source_skipped_points` 是跳过的命中帧数，`source_skipped_records` 是含跳过命中的记录数。
+原始分类、Q1 计数及专用修复器评估保留。此跳过策略属于统一选择入口，专用 `--s1-*` 输出仍保留原前置检查结果。
+验证及范围见 [源码缺失跳过报告](docs/SOURCE-SKIP-2026-09-28.md)。
+
+## P1 路径／加载方法接入（2026-09-27）
+
+`--s1-storage` 评估原五个存储方法及新增四个文件系统路径方法；`--s1-loading` 评估七个类／原生库加载方法。
+二者需要 `--q1-classpath`，自动提取上下文；`--repair-selection` 自动路由这两组评估。
+新增 11 个方法均已绑定，但目前只输出真实上下文及未满足的前置条件，不生成新补丁，UNKNOWN 不启动 P3。
+存储旧参数 `--s1-q13` 保留兼容。详见 [P1 接入报告](docs/P1-BINDINGS-2026-09-27.md)。
+
+## Q1.3 存储方法修复构造（2026-09-27）
+
+`--s1-q13 --q1-classpath <classpath>` 自动提取上下文，逐项评估五个 P1_FIRST 存储方法。
+`--repair-selection` 也已接入同一评估；选择器中的 `selected_proposal_pool=q13_evaluation` 引用专用候选。
+目前 `readAttribute/readSymlinkTarget` 的异步刷新准备路径可共用一份 P2 候选；
+`getName/getNameByNameId/getFileInfo` 尚无安全模板，返回证据不足，不自动转 P3。
+输出不应用生产补丁。25 项相关测试通过，真实 IDE 验证未完成。
+详见 [构造与验证报告](docs/Q13-REPAIR-CONSTRUCTION-2026-09-27.md)，后续构造遵循 [S1 工作规范](docs/S1-REPAIR-CONSTRUCTION-WORKFLOW.md)。
+
 ## Q1二级类别映射（2026-09-26，当前）
 
 现有75个方法在同一Kotlin文件中配置methodCategories：Q1.1文件系统、Q1.2类/原生库加载、Q1.3索引存储、
@@ -176,6 +205,10 @@ JDK未定位帧、模块名前缀、源码哈希变化、越界路径、Python�
 未运行历史 Repair 测试，未重跑5891条；当前无可用 IDE lint MCP。
 # Q2 同步等待候选分类器
 
+S1 P2 已新增候选生成入口 `--s1-p2`；公共方法提取器为 `pool/extract_method.kt`（`--extract-method`）。旧 Q16Repairer 已迁移。文件结构、输出协议、覆盖边界和验证见 [S1 P2 原型](docs/S1-P2-2026-09-27.md)。
+
+Q1.6 修复器第一步现支持 `--s1-q16-method`：从 Q1.6 命中帧定位完整业务方法，见 [入口、字段和1238验证](docs/Q16-METHOD-LOCATION.md)。
+
 `Q2SynchronousWaitControlClassifier.kt` 接收同一份 Finder 数据；仅检查 UI 线程，要求完整等待栈顶，再匹配最近调用者及嵌套等待上下文。普通事件队列等待、显式获取锁、BLOCKED 和缺失栈顶返回检查原因。六类定义见 [原表报告](../maintenance/raw-q2-20260926-final/REPORT.md)。规则基于本批真实栈，未命中不代表不存在等待问题。
 
 复用 `main/scripts/build-q1.ps1` 同时编译 Q1/Q2，不改变 Q1 行为：
@@ -199,3 +232,49 @@ D:/intellij-community-master/out/edt-freeze-finder/layout-python/python.exe repa
 - `injected_test_path`：明确测试路径，不自动剔除；`write_intent_permit_context`：写意图许可上下文，可供 Q4 复用，不是锁根因判定。
 
 2026-09-26 验证：编译 exit 0；原有 14 测试通过；新增 1 测试含 13 个边界案例通过；全量 CLI exit 0，5891 accepted/0 rejected，1363 候选，类别数 526/34/672/33/100/31。逐行类别与原表审核完全相同，Finder 对象保持一致，帧引用有效。17 条测试路径，1023 条写意图许可上下文。结果见 [验证数据](docs/Q2-VALIDATION-2026-09-26.json)。没有执行修复；无可用 IDE lint MCP。
+# 修复方案选择
+
+`repair.py --s1-p1 --q1-classpath <classpath>`: generate a source-bound experimental P1 reload candidate patch (unapplied), including background disk identity/version checks and guarded EDT commit. Currently blocked by a sync-refresh correctness regression (`eligible_for_application=false`); see [paired validation](docs/P1-ROW4746-VERIFICATION-2026-09-27.md).
+
+`repair.py --repair-selection --q1-classpath <classpath>`: stack-based P1/P2 triage and source checks; try P3 only after both fail. The dedicated P1 reload patch is currently available via `--s1-p1`, not this selector. P3 patch generation remains unimplemented. See [REPAIR-SELECTION.md](docs/REPAIR-SELECTION.md).
+
+`repair.py --s1-regex --q1-classpath <classpath>`: extract the classified Pattern.compile caller and generate a source-bound P1 precompilation reference candidate. Runtime plugin version remains unknown; no automatic application. See [Pattern.compile case](docs/PATTERN-COMPILE-2026-09-27.md).
+
+## S2 method context and conditional selection
+
+Use `--q2-classpath <classpath> --s2-repair-selection` to extract up to five source method layers and propose conditional P1/P2/P3/G1 plans. `--s2-extract-method` extracts only. No S2 patches are generated. See [S2 interfaces and verification](docs/S2-CONTEXT-SELECTION-2026-09-28.md).
+# S2 P3 source analysis (2026-09-28)
+
+Q2 output also includes `wait_resource_evidence`: observations link `thread_id`
+to a record-local `resource_id` parsed from Finder `threads[].details` when the
+thread is WAITING, TIMED_WAITING or BLOCKED. Preserve the reported class/hash,
+raw description and stack hash; do not join IDs across records. These are
+reported object labels (identity hashes can collide), not owner/producer proof.
+CompletableFuture Signaller nodes are explicitly distinguished from Futures.
+Missing labels remain unavailable; resource cycles are NOT_ANALYZED.
+EDT observations with reported state BLOCKED additionally emit
+`wait_kind=MONITOR_ENTRY_BLOCKED`, with `monitor_object_status` equal to
+`REPORTED_LABEL_LINKED` or `LABEL_MISSING_OR_UNRECOGNIZED`. This is a state-based
+monitor-entry/reentry classification, not a lock-owner or deadlock inference.
+WAITING/Object.wait and background threads are not assigned this EDT marker.
+`monitor_owner_associations` links each EDT monitor observation to the explicit
+`owned by` name using an exact, unique thread-name match within the same record.
+REPORTED_OWNER_LINKED includes owner_thread_id/state; absent names, missing
+threads, duplicate names and self-owner contradictions have separate statuses.
+Resources refer to this association table through SEE_MONITOR_OWNER_ASSOCIATIONS;
+ownership is not inferred from thread roles or class names. This does not prove
+a resource cycle or establish a cross-record runtime identity.
+`q2.monitor_cycle_repair` separately recognizes the AWT tree-lock/disposal
+cycle candidate and selects the business caller before setAvailable as a repair
+entry. It runs even for BLOCKED/non-Q2 records. It is an admission diagnostic,
+not a patch generator; row3587 is blocked on missing plugin caller source.
+
+`--s2-repair-selection` now runs `P3PreconditionAnalyzer` on extracted background
+dispatch candidates. Kotlin PSI and the JDK Java parser parse verified method fragments; output includes
+dispatch/callback/continuation facts and four evidence-bearing checks. This is
+intraprocedural analysis without type/alias resolution. Unavailable callback
+bodies, external effects and unresolved lifecycle contracts remain UNKNOWN.
+Known blocking write-transfer conflicts are FAIL for direct async replacement;
+ordering, scope and failure-routing changes are NEEDS_ADAPTATION. There is no
+automatic all-PASS admission or patch generator yet. The runtime classpath from
+`build-q1.ps1` now includes the existing Kotlin compiler dependencies for PSI.

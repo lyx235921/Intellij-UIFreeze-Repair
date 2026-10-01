@@ -1,0 +1,41 @@
+{
+  "records": [
+    {
+      "row": 1238,
+      "same_patch_as_tested": true,
+      "stack_path_contains_moved_ImageIO_read": true,
+      "source_hash_unchanged": true,
+      "production_freeze_reproduced": false
+    },
+    {
+      "row": 1779,
+      "same_patch_as_tested": true,
+      "stack_path_contains_moved_ImageIO_read": true,
+      "source_hash_unchanged": true,
+      "production_freeze_reproduced": false
+    },
+    {
+      "row": 1806,
+      "same_patch_as_tested": true,
+      "stack_path_contains_moved_ImageIO_read": true,
+      "source_hash_unchanged": true,
+      "production_freeze_reproduced": false
+    },
+    {
+      "row": 1812,
+      "same_patch_as_tested": true,
+      "stack_path_contains_moved_ImageIO_read": true,
+      "source_hash_unchanged": true,
+      "production_freeze_reproduced": false
+    },
+    {
+      "row": 1813,
+      "same_patch_as_tested": true,
+      "stack_path_contains_moved_ImageIO_read": true,
+      "source_hash_unchanged": true,
+      "production_freeze_reproduced": false
+    }
+  ],
+  "unique_patch_count": 1,
+  "coverage_kind": "observed stack path plus shared controlled patch test; not five incident reproductions"
+}

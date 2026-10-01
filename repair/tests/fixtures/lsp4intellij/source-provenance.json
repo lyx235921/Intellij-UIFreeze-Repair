@@ -1,0 +1,12 @@
+{
+  "repository": "ballerina-platform/lsp4intellij",
+  "commit": "8037f7bfccd21bd9c34e6e43b51700d743b52672",
+  "path": "src/main/java/org/wso2/lsp4intellij/IntellijLanguageClient.java",
+  "source_url": "https://github.com/ballerina-platform/lsp4intellij/blob/8037f7bfccd21bd9c34e6e43b51700d743b52672/src/main/java/org/wso2/lsp4intellij/IntellijLanguageClient.java",
+  "saved_source_sha256": "55a9574465d9e165f0800bc1604f25d2d89930c80a31adc73062de821326bde3",
+  "incident_version": "UNKNOWN_USER_CONFIRMED",
+  "mapping": "named caller and matching String.matches structure; runtime lines200-201 vs reference175-178; not binary equivalence",
+  "license": "Apache-2.0 header retained",
+  "scope": "single source file reference, not a clone or full plugin build",
+  "snapshot_note": "saved source contains an extra trailing blank line; SHA256 gates the saved reference"
+}

@@ -4,6 +4,11 @@ import com.google.gson.Gson
 import com.google.gson.JsonArray
 import com.google.gson.JsonObject
 import com.google.gson.JsonParser
+import java.nio.file.Path
+import org.jetbrains.research.lockrepair.pool.s2.ExtractMethodS2
+import org.jetbrains.research.lockrepair.pool.s2.RepairSelectionS2
+import org.jetbrains.research.lockrepair.pool.s2.WaitResourceEvidence
+import org.jetbrains.research.lockrepair.pool.s2.MonitorCycleRepair
 
 /** Stack-based synchronous wait candidates, not root-cause or repair decisions. */
 object Q2SynchronousWaitControlClassifier {
@@ -144,6 +149,14 @@ object Q2SynchronousWaitControlClassifier {
           addProperty("problem_family", "Q2")
           add("record_id", record["record_id"])
           add("classification", classify(record))
+          add("wait_resource_evidence", WaitResourceEvidence.extract(record))
+          add("monitor_cycle_repair", MonitorCycleRepair.assess(record, getAsJsonObject("wait_resource_evidence")))
+        }
+        if ("--s2-extract-method" in args || "--s2-repair-selection" in args) {
+          val root = Path.of(args.firstOrNull { !it.startsWith("--") } ?: record["source_root"].asString)
+          val context = ExtractMethodS2.extract(record, result.getAsJsonObject("classification"), root)
+          result.add("method_context_s2", context)
+          if ("--s2-repair-selection" in args) result.add("repair_selection_s2", RepairSelectionS2.select(context))
         }
         System.out.write((gson.toJson(result) + "\n").toByteArray(Charsets.UTF_8))
         System.out.flush()

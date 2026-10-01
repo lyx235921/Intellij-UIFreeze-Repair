@@ -1,0 +1,25 @@
+{
+  "date": "2026-09-27",
+  "source_basis": "LOCAL_CHECKOUT_RUNTIME_VERSION_UNCONFIRMED",
+  "rows": [
+    207,
+    655,
+    692,
+    699,
+    3935,
+    4175
+  ],
+  "finder_command": "see repair/docs/Q13-REPAIR-CONSTRUCTION-2026-09-27.md",
+  "files": {
+    "platform/lvcs-impl/src/com/intellij/history/integration/IdeaGateway.java": "3a3440360b8741884b19be21d9109b136e7ddfeb6882a031f3ef86ecd77a0eb5",
+    "platform/platform-impl/src/com/intellij/openapi/vfs/impl/local/LocalFileSystemImpl.java": "767aa23b30340e50480de3d0ded96f71c3b893e3d9e9ba661d9d85589f67fe9c",
+    "platform/platform-impl/src/com/intellij/openapi/vfs/newvfs/impl/VirtualDirectoryImpl.java": "6437d23d1f2a854466d53d8a3dbf9b695e4fedac35818a06fc12b6205cd2383f",
+    "platform/platform-impl/src/com/intellij/openapi/vfs/newvfs/impl/VirtualFileSystemEntry.java": "96f25c938d3e8cd8814f852d8c2d515ad6dc32b4e1e59f582822130ae3d8f08e",
+    "platform/platform-impl/src/com/intellij/openapi/vfs/newvfs/persistent/FSRecordsImpl.java": "12a9285bb3c63f97cf2b59f2cd8c4ba8748e2e8d59641264edd8b6c2a4ac5420",
+    "platform/platform-impl/src/com/intellij/openapi/vfs/newvfs/persistent/PersistentFSImpl.java": "f7c6f8dbdfc14910dbc22a6253d0d011fb201427457e31e6d3b2b01d38511108",
+    "platform/projectModel-impl/src/com/intellij/openapi/roots/impl/FileIndexBase.java": "a3d32ce9018600ab4c522020d6d6543b79551a0ad39c54eaf7312b7bb6e18502",
+    "platform/projectModel-impl/src/com/intellij/openapi/roots/impl/ProjectFileIndexImpl.java": "27c8c06ed160f9d9bb4860f31fab35f3c3dfb06582d1427b2830060af405f265",
+    "platform/projectModel-impl/src/com/intellij/workspaceModel/core/fileIndex/impl/WorkspaceFileIndexImpl.kt": "681eefce6e1a4cb7698f18d81189bd9e5e6e08f1c2b29d2861f50d6c492827ea",
+    "platform/workspace/storage/src/com/intellij/platform/workspace/storage/impl/url/VirtualFileUrlManagerImpl.kt": "a7b439f7116ca58b6f6ed8dcbc0d20d23225cabe37968d55468ab4695092eda0"
+  }
+}

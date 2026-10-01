@@ -1,0 +1,172 @@
+{
+  "records": [
+    {
+      "row": 868,
+      "intake": "ACCEPTED",
+      "categories": [],
+      "context_status": "NOT_APPLICABLE",
+      "p2_status": "NO_SUPPORTED_METHOD",
+      "patch_count": 0,
+      "methods": [],
+      "proposals": [],
+      "patch_hashes": []
+    },
+    {
+      "row": 1238,
+      "intake": "ACCEPTED",
+      "categories": [
+        "Q1.6"
+      ],
+      "context_status": "METHOD_LOCATED",
+      "p2_status": "CANDIDATE_PATCH",
+      "patch_count": 1,
+      "methods": [
+        "com.intellij.ui.AppIcon$Win7AppIcon._setOkBadge"
+      ],
+      "proposals": [
+        {
+          "method_frame_id": "t0:f7",
+          "path": "platform/platform-impl/src/com/intellij/ui/AppIcon.java",
+          "status": "CANDIDATE_PATCH"
+        }
+      ],
+      "patch_hashes": [
+        "59b604c2cad7df0d67bea96f8834883533da6b720df9f58c605ac2c252306dd4"
+      ]
+    },
+    {
+      "row": 1774,
+      "intake": "ACCEPTED",
+      "categories": [],
+      "context_status": "NOT_APPLICABLE",
+      "p2_status": "NO_SUPPORTED_METHOD",
+      "patch_count": 0,
+      "methods": [],
+      "proposals": [],
+      "patch_hashes": []
+    },
+    {
+      "row": 1775,
+      "intake": "ACCEPTED",
+      "categories": [],
+      "context_status": "NOT_APPLICABLE",
+      "p2_status": "NO_SUPPORTED_METHOD",
+      "patch_count": 0,
+      "methods": [],
+      "proposals": [],
+      "patch_hashes": []
+    },
+    {
+      "row": 1779,
+      "intake": "ACCEPTED",
+      "categories": [
+        "Q1.7"
+      ],
+      "context_status": "METHOD_LOCATED",
+      "p2_status": "CANDIDATE_PATCH",
+      "patch_count": 1,
+      "methods": [
+        "com.intellij.ui.AppIcon$Win7AppIcon._setOkBadge"
+      ],
+      "proposals": [
+        {
+          "method_frame_id": "t0:f9",
+          "path": "platform/platform-impl/src/com/intellij/ui/AppIcon.java",
+          "status": "CANDIDATE_PATCH"
+        }
+      ],
+      "patch_hashes": [
+        "59b604c2cad7df0d67bea96f8834883533da6b720df9f58c605ac2c252306dd4"
+      ]
+    },
+    {
+      "row": 1806,
+      "intake": "ACCEPTED",
+      "categories": [
+        "Q1.1"
+      ],
+      "context_status": "METHOD_LOCATED",
+      "p2_status": "NO_SUPPORTED_METHOD",
+      "patch_count": 0,
+      "methods": [
+        "com.intellij.platform.core.nio.fs.TracingFileSystemProvider.newByteChannel"
+      ],
+      "proposals": [
+        {
+          "method_frame_id": "t0:f5",
+          "path": "platform/core-nio-fs/src/com/intellij/platform/core/nio/fs/TracingFileSystemProvider.java",
+          "status": "UNSUPPORTED",
+          "reason": "UNSUPPORTED_METHOD_SHAPE"
+        }
+      ],
+      "patch_hashes": []
+    },
+    {
+      "row": 1812,
+      "intake": "ACCEPTED",
+      "categories": [
+        "Q1.1",
+        "Q1.7"
+      ],
+      "context_status": "METHOD_LOCATED",
+      "p2_status": "CANDIDATE_PATCH",
+      "patch_count": 1,
+      "methods": [
+        "com.intellij.platform.core.nio.fs.TracingFileSystemProvider.delete",
+        "com.intellij.ui.AppIcon$Win7AppIcon._setOkBadge"
+      ],
+      "proposals": [
+        {
+          "method_frame_id": "t0:f4",
+          "path": "platform/core-nio-fs/src/com/intellij/platform/core/nio/fs/TracingFileSystemProvider.java",
+          "status": "UNSUPPORTED",
+          "reason": "UNSUPPORTED_METHOD_SHAPE"
+        },
+        {
+          "method_frame_id": "t0:f12",
+          "path": "platform/platform-impl/src/com/intellij/ui/AppIcon.java",
+          "status": "CANDIDATE_PATCH"
+        }
+      ],
+      "patch_hashes": [
+        "59b604c2cad7df0d67bea96f8834883533da6b720df9f58c605ac2c252306dd4"
+      ]
+    },
+    {
+      "row": 1813,
+      "intake": "ACCEPTED",
+      "categories": [
+        "Q1.1",
+        "Q1.7"
+      ],
+      "context_status": "METHOD_LOCATED",
+      "p2_status": "CANDIDATE_PATCH",
+      "patch_count": 1,
+      "methods": [
+        "com.intellij.platform.core.nio.fs.TracingFileSystemProvider.delete",
+        "com.intellij.ui.AppIcon$Win7AppIcon._setOkBadge"
+      ],
+      "proposals": [
+        {
+          "method_frame_id": "t0:f4",
+          "path": "platform/core-nio-fs/src/com/intellij/platform/core/nio/fs/TracingFileSystemProvider.java",
+          "status": "UNSUPPORTED",
+          "reason": "UNSUPPORTED_METHOD_SHAPE"
+        },
+        {
+          "method_frame_id": "t0:f12",
+          "path": "platform/platform-impl/src/com/intellij/ui/AppIcon.java",
+          "status": "CANDIDATE_PATCH"
+        }
+      ],
+      "patch_hashes": [
+        "59b604c2cad7df0d67bea96f8834883533da6b720df9f58c605ac2c252306dd4"
+      ]
+    }
+  ],
+  "accepted": 8,
+  "patched_records": 4,
+  "unique_patches": 1,
+  "finder_preserved": true,
+  "cli_exit": 0
+}

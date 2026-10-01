@@ -9,7 +9,7 @@ import openpyxl
 import tree_sitter
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "main"))
-from find_sources import locate_record
+from find_sources import excluded_huawei_symbols, locate_record
 from real_stack_input import parse_stack
 from source_locator import SourceLocator
 
@@ -123,6 +123,7 @@ class SourceLocatorTest(unittest.TestCase):
     book.active.append([1, 'cause freeze thread:[AWT-EventQueue-0] RUNNABLE\n'
                           'topStack: 0 p.Example.run(Example.java:1)\n'
                           'problemModuleStack: 0 p.Example.run(Example.java:1)'])
+    book.active.append([1, '[worker] WAITING\n0 com.huawei.snap.Task.run(Task.java:1)'])
     workbook, output = self.root / "input.xlsx", self.root / "output.jsonl"
     book.save(workbook)
     bootstrap = "import sys,runpy;sys.path.insert(0,sys.argv.pop(1));sys.argv.pop(0);runpy.run_path(sys.argv[0],run_name='__main__')"
@@ -133,8 +134,25 @@ class SourceLocatorTest(unittest.TestCase):
     self.assertEqual(0, first.returncode, first.stderr)
     before = output.read_bytes()
     self.assertEqual("finder-source-locations/1", json.loads(before)["schema_version"])
+    self.assertIn("SKIPPED_HUAWEI_CLOSED_SOURCE", first.stderr)
+    summary = json.loads(first.stderr.splitlines()[-1])
+    self.assertEqual(1, summary["records"])
+    self.assertEqual(1, summary["skipped_huawei_records"])
+    only = subprocess.run(command[:-1] + [str(self.root / "skipped.jsonl"), "--row", "3"],
+                          capture_output=True, text=True)
+    self.assertEqual(0, only.returncode, only.stderr)
+    self.assertEqual("", (self.root / "skipped.jsonl").read_text())
     self.assertNotEqual(0, subprocess.run(command, capture_output=True).returncode)
     self.assertEqual(before, output.read_bytes())
+
+  def test_huawei_filter_before_source_lookup(self):
+    for symbol in ("com.huawei.snap.Task.run", "plugin@1/com.huawei.Foo.run",
+                   "loader//com.huawei.Foo$$Lambda/0x123.run"):
+      record = {"threads": [{"frames": [{"symbol": "java.lang.Object.wait"}]},
+                            {"frames": [{"symbol": symbol}]}]}
+      self.assertIsNone(locate_record(record, None))
+    for symbol in ("com.huaweiother.Foo.run", "org.example.com.huawei.Foo.run", None):
+      self.assertEqual([], excluded_huawei_symbols({"threads": [{"frames": [{"symbol": symbol}]}]}))
 
 
 if __name__ == "__main__":

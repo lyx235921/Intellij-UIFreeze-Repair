@@ -84,7 +84,7 @@ def main(argv=None):
       raise RuntimeError(f"find_sources returned {code}")
     report["verification"] = verify(output)
     expected = {r["record_id"]: (r["occurrences"], hashlib.sha256(r["raw_stack"].encode()).hexdigest())
-                for r in read_records(args.workbook)}
+                for r in read_records(args.workbook) if not find_sources.excluded_huawei_symbols(r)}
 
     def checked_records():
       with output.open(encoding="utf-8") as stream:

@@ -1,5 +1,10 @@
 # Finder：真实堆栈输入
 
+2026-09-29：`find_sources.py` 默认在源码定位前排除任一线程栈帧命中 `com.huawei.*` 的整条记录，不写入交给 Repair 的 JSONL。
+支持模块/类加载器前缀；不匹配 `com.huaweiother.*`。stderr 按行记录 `SKIPPED_HUAWEI_CLOSED_SOURCE`、行号和命中符号，
+最终汇总 `input_records`、`records`、`skipped_huawei_records`。显式 `--row` 命中排除规则正常返回空输出，不视为行缺失。
+原始读取器仍保留全量输入；已有历史 JSONL 不会自动过滤，需重新运行 Finder 才能使用新规则。
+
 输入入口：`main/real_stack_input.py`；完整第1～5步入口：`main/find_sources.py`。依赖见 `main/requirements.txt`。
 
 从 tools/edt-freeze-finder 运行：
